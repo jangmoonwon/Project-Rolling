@@ -2,7 +2,7 @@
 name: Bug report
 about: 버그 이슈 리포트 템플릿
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
