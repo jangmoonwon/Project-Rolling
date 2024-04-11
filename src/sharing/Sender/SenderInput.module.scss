@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75rem;
-  @include font-bold("Pretendard", 1.5rem, $color-gray900);
+  @include font-bold(1.5rem, $color-gray900, "Pretendard");
   font-style: normal;
   font-weight: 700;
   line-height: 2.25rem;
@@ -13,7 +13,7 @@
 }
 
 .title {
-  @include font-bold("Pretendard", 2rem, $color-gray900);
+  @include font-bold(2rem, $color-gray900, "Pretendard");
   font-style: normal;
   font-weight: 700;
   line-height: 2.25rem;
@@ -29,7 +29,7 @@
   border-radius: 0.5rem;
   border: 1px solid $color-gray300;
   background: $color-white;
-  @include font-regular("Pretendard", 1rem, $color-gray500);
+  @include font-regular(1rem, $color-gray500, "Pretendard");
   font-style: normal;
   font-weight: 400;
   line-height: 1.625rem;
@@ -37,7 +37,7 @@
 }
 
 .errorMessage {
-  @include font-regular("Pretendard", 0.75rem, $color-error);
+  @include font-regular(0.75rem, $color-error, "Pretendard");
   font-style: normal;
   font-weight: 400;
   line-height: 1.125rem;

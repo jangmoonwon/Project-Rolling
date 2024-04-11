@@ -7,7 +7,7 @@
 }
 
 .title {
-  @include font-bold("Pretendard", 2rem, $color-gray900);
+  @include font-bold(2rem, $color-gray900, "Pretendard");
   font-style: normal;
   font-weight: 700;
   line-height: 2.25rem;

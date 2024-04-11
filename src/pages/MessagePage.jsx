@@ -19,7 +19,6 @@ export const MessagePage = () => {
 
   const profileImages = [imageTest1, imageTest2];
   const relationships = ["친구", "지인", "동료", "가족"];
-  // 진짜 폰트로 변경
   const Fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
   /** onSubmit console 테스트 */
