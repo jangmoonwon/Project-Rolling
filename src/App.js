@@ -1,8 +1,16 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import PlayGround from "./Playground";
+
 function App() {
   return (
-    <div>
-      <h1>hello world</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<PlayGround />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
