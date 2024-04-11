@@ -6,6 +6,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
+/** 텍스트 에디터 */
 export const TextEditor = ({ value, setValue }) => {
   const modules = {
     toolbar: [

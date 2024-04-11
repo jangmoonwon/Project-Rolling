@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
+/** 메세지 남긴 사람 이름 입력창 */
 export const SenderInput = ({ value, setValue }) => {
   const [errorMessage, setErrorMessage] = useState("");
 

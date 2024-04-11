@@ -1,22 +1,22 @@
-@import "src/styles/font.scss";
+@import "src/styles/global.scss";
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75rem;
-  @include font-bold("Pretendard", 1.5rem, #181818);
+  @include font-bold("Pretendard", 1.5rem, $color-gray900);
   font-style: normal;
   font-weight: 700;
-  line-height: 2.25rem; /* 150% */
+  line-height: 2.25rem;
   letter-spacing: -0.015rem;
 }
 
 .title {
-  @include font-bold("Pretendard", 2rem, #181818);
+  @include font-bold("Pretendard", 2rem, $color-gray900);
   font-style: normal;
   font-weight: 700;
-  line-height: 2.25rem; /* 150% */
+  line-height: 2.25rem;
   letter-spacing: -0.015rem;
 }
 
@@ -39,10 +39,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  @include font-regular("Pretendard", 1rem, #555);
+  @include font-regular("Pretendard", 1rem, $color-gray500);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.625rem; /* 162.5% */
+  line-height: 1.625rem;
   letter-spacing: -0.01rem;
 }
 

@@ -1,22 +1,22 @@
-@import "src/styles/font.scss";
+@import "src/styles/global.scss";
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.75rem;
-  @include font-bold("Pretendard", 1.5rem, #181818);
+  @include font-bold("Pretendard", 1.5rem, $color-gray900);
   font-style: normal;
   font-weight: 700;
-  line-height: 2.25rem; /* 150% */
+  line-height: 2.25rem;
   letter-spacing: -0.015rem;
 }
 
 .title {
-  @include font-bold("Pretendard", 2rem, #181818);
+  @include font-bold("Pretendard", 2rem, $color-gray900);
   font-style: normal;
   font-weight: 700;
-  line-height: 2.25rem; /* 150% */
+  line-height: 2.25rem;
   letter-spacing: -0.015rem;
 }
 
@@ -34,8 +34,8 @@ li {
   width: 20rem;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
-  @include font-regular("Pretendard", 1rem, #555);
+  border: 1px solid $color-gray300;
+  @include font-regular("Pretendard", 1rem, $color-gray500);
   font-style: normal;
   font-weight: 400;
   line-height: 1.625rem;
@@ -44,27 +44,27 @@ li {
 }
 
 .dropdownBlock:hover {
-  border: 1px solid #555;
+  border: 1px solid $color-gray500;
 }
 
 .items {
   margin-top: 0.5rem;
   width: 20rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid $color-gray300;
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.08);
 }
 
 .item {
   padding: 0.75rem 1rem;
-  @include font-regular("Pretendard", 1rem, #555);
+  @include font-regular("Pretendard", 1rem, $color-gray500);
   font-style: normal;
   font-weight: 400;
-  line-height: 1.625rem; /* 162.5% */
+  line-height: 1.625rem;
   letter-spacing: -0.01rem;
   cursor: pointer;
 }
 
 .item:hover {
-  background: #f6f6f6;
+  background: $color-gray100;
 }

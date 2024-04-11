@@ -1,16 +1,16 @@
-@import "src/styles/font.scss";
+@import "src/styles/global.scss";
 
 .button {
   border-radius: 0.75rem;
   border: 0px;
-  background: #9935ff;
+  background: $color-purple600;
   display: flex;
   width: 100%;
   padding: 0.875rem 1.5rem;
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  @include font-bold("Pretendard", 1.125rem, #fff);
+  @include font-bold("Pretendard", 1.125rem, $color-white);
   text-align: center;
   font-style: normal;
   font-weight: 700;

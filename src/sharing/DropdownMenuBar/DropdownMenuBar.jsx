@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
+/** 드롭다운 메뉴바 */
 export const DropdownMenuBar = ({ value, setValue, data, text }) => {
   const [isOpen, setIsOpen] = useState(false);
 
