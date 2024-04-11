@@ -1,7 +1,10 @@
+import "../src/styles/reset.css";
+import { MessagePage } from "./pages/MessagePage";
+
 function App() {
   return (
     <div>
-      <h1>hello world</h1>
+      <MessagePage />
     </div>
   );
 }

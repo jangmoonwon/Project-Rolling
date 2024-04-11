@@ -1,0 +1,15 @@
+@import "src/styles/font.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  @include font-bold("Pretendard", 2rem, #181818);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem; /* 150% */
+  letter-spacing: -0.015rem;
+}
