@@ -1,0 +1,13 @@
+@mixin font-bold($font-size, $font-color:black) {
+	font-family: 'Pretendard';
+	font-size: $font-size;
+	font-weight: 700;
+	color: $font-color;
+}
+
+@mixin font-regular($font-size, $font-color:black) {
+	font-family: 'Pretendard';
+	font-size: $font-size;
+	font-weight: 400;
+	color: $font-color;
+}
