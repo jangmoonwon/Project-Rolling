@@ -20,31 +20,3 @@
   font-weight: 400;
   color: $font-color;
 }
-
-@mixin notoSans($font-size, $font-color: black) {
-  font-family: "Noto Sans KR";
-  font-size: $font-size;
-  font-weight: 400;
-  color: $font-color;
-}
-
-@mixin pretendard($font-size, $font-color: black) {
-  font-family: "Pretendard";
-  font-size: $font-size;
-  font-weight: 400;
-  color: $font-color;
-}
-
-@mixin nanummyeongjo($font-size, $font-color: black) {
-  font-family: "Nanum Myeongjo";
-  font-size: $font-size;
-  font-weight: 400;
-  color: $font-color;
-}
-
-@mixin nanumpenscript($font-size, $font-color: black) {
-  font-family: "Nanum Pen Script";
-  font-size: $font-size;
-  font-weight: 400;
-  color: $font-color;
-}
