@@ -29,11 +29,13 @@ export const HomePage = () => {
               서로에게 이모지로 감정을
               <br /> 표현해보세요
             </h2>
-            <p className={cx("description")}>롤링 페이퍼에 이모지를 추가할 수 있어요.</p>
+            <p className={cx("description")}>
+              롤링 페이퍼에 이모지를 추가할 수 있어요.
+            </p>
             <img
               className={cx("content-image")}
               src={EMOJI_IMAGE}
-              alt="카드리스트 이미지"
+              alt="이모지 이미지"
             />
           </section>
         </article>
