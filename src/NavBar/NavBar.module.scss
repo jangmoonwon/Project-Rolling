@@ -1,0 +1,23 @@
+@import "../styles/global.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 120.7rem;
+  height: 6.2rem;
+}
+
+.button {
+  height: 4rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid $color-gray300;
+}
