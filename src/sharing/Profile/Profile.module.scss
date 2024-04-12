@@ -1,0 +1,61 @@
+@import "src/styles/global.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  @include font-bold(1.5rem, $color-gray900, "Pretendard");
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem;
+  letter-spacing: -0.015rem;
+}
+
+.title {
+  @include font-bold(2rem, $color-gray900, "Pretendard");
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem;
+  letter-spacing: -0.015rem;
+}
+
+.profileBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.profileImage {
+  width: 7rem;
+  height: 7rem;
+  margin: 0.44rem 0;
+  border-radius: 6.25rem;
+  object-fit: cover;
+}
+
+.imgItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  @include font-regular(1rem, $color-gray500, "Pretendard");
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.625rem;
+  letter-spacing: -0.01rem;
+}
+
+.itemsBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.item {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 6.25rem;
+  object-fit: cover;
+  cursor: pointer;
+}

@@ -1,0 +1,13 @@
+@import "src/styles/global.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.125rem;
+  width: 45rem;
+  margin: 7rem auto 3.75rem;
+}
+
+.marginTop {
+  margin-top: 3.12rem;
+}
