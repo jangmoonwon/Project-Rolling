@@ -2,11 +2,11 @@ import { useState } from "react";
 import styles from "./MessagePages.module.scss";
 import classNames from "classnames/bind";
 import { defaultImage, imageTest1, imageTest2 } from "./constant";
-import { SenderInput } from "../sharing/Sender/SenderInput";
-import { Profile } from "../sharing/Profile/Profile";
-import { DropdownMenuBar } from "../sharing/DropdownMenuBar/DropdownMenuBar";
-import { Button } from "../sharing/Button/Button";
-import { TextEditor } from "../sharing/TextEditor/TextEditor";
+import { SenderInput } from "../../sharing/Sender/SenderInput";
+import { Profile } from "../../sharing/Profile/Profile";
+import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
+import { Button } from "../../sharing/Button/Button";
+import { TextEditor } from "../../sharing/TextEditor/TextEditor";
 
 const cx = classNames.bind(styles);
 
