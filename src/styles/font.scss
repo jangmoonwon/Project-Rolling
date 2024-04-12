@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/earlyaccess/nanummyeongjo.css");
 @import url("https://fonts.googleapis.com/earlyaccess/nanumpenscript.css");
 
-@mixin font-bold($font-size, $font-color: black, $font-family: "Noto Sans KR") {
+@mixin font-bold($font-size, $font-color: black, $font-family: "Pretendard") {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: 700;
@@ -13,7 +13,7 @@
 @mixin font-regular(
   $font-size,
   $font-color: black,
-  $font-family: "Noto Sans KR"
+  $font-family: "Pretendard"
 ) {
   font-family: $font-family;
   font-size: $font-size;
