@@ -29,7 +29,7 @@ export const HomePage = () => {
               서로에게 이모지로 감정을
               <br /> 표현해보세요
             </h2>
-            <p className={cx("description")}>로그인 없이 자유롭게 만들어요.</p>
+            <p className={cx("description")}>롤링 페이퍼에 이모지를 추가할 수 있어요.</p>
             <img
               className={cx("content-image")}
               src={EMOJI_IMAGE}
