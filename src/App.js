@@ -1,3 +1,4 @@
+import "styles/reset.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { MessagePage } from "./pages/MessagePage/MessagePage";
