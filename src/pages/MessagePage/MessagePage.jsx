@@ -2,11 +2,12 @@ import { useState } from "react";
 import styles from "./MessagePages.module.scss";
 import classNames from "classnames/bind";
 import { defaultImage, imageTest1, imageTest2 } from "./constant";
+import { NavBar } from "NavBar";
 import { SenderInput } from "../../sharing/Sender/SenderInput";
 import { Profile } from "../../sharing/Profile/Profile";
 import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
-import { Button } from "../../sharing/Button/Button";
 import { TextEditor } from "../../sharing/TextEditor/TextEditor";
+import { CreateButton } from "../../sharing/CreateButton/CreateButton";
 
 const cx = classNames.bind(styles);
 
@@ -35,6 +36,7 @@ export const MessagePage = () => {
 
   return (
     <>
+      <NavBar />
       <form className={cx("container")} onSubmit={handleSubmit}>
         <SenderInput value={sender} setValue={setSender} />
 
@@ -62,7 +64,7 @@ export const MessagePage = () => {
           />
         </div>
 
-        <Button />
+        <CreateButton />
       </form>
     </>
   );
