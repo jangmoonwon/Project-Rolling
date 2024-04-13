@@ -4,12 +4,14 @@ import { LOGO_IMAGE } from "./constant";
 
 const cx = classNames.bind(styles);
 
-export const NavBar = () => {
+export const NavBar = ({ isHiddenButton }) => {
   return (
     <nav className={cx("container")}>
       <div className={cx("item")}>
         <img src={LOGO_IMAGE} alt="nav logo" />
-        <button className={cx("button")}>롤링 페이퍼 만들기</button>
+        <button className={cx("button", { hidden: isHiddenButton })}>
+          롤링 페이퍼 만들기
+        </button>
       </div>
     </nav>
   );
