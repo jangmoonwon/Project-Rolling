@@ -6,14 +6,14 @@ const cx = classNames.bind(styles);
 
 /** 컬러 또는 이미지 선택 상자 */
 export const Wallpaper = ({ allColors, allImages, color, image }) => {
-  const { userColor, setuserColor, selectedColorId, setSelectedColorId } =
+  const { userColor, setUserColor, selectedColorId, setSelectedColorId } =
     allColors;
   const { userImage, setUserImage, selectedImageId, setSelectedImageId } =
     allImages;
 
   const handleColorClick = () => {
     if (userColor === "button") {
-      setuserColor("clickButton");
+      setUserColor("clickButton");
       setUserImage("button");
       setSelectedColorId(0);
       setSelectedImageId(null);
@@ -22,7 +22,7 @@ export const Wallpaper = ({ allColors, allImages, color, image }) => {
 
   const handleImageClick = () => {
     if (userImage === "button") {
-      setuserColor("button");
+      setUserColor("button");
       setUserImage("clickButton");
       setSelectedColorId(null);
       setSelectedImageId(0);
