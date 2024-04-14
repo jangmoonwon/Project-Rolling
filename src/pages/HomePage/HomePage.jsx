@@ -2,6 +2,7 @@ import styles from "./HomePage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
 import { CARD_IMAGE, EMOJI_IMAGE } from "./constant";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -40,7 +41,9 @@ export const HomePage = () => {
           </section>
         </article>
         <div className={cx("button-box")}>
-          <button className={cx("button")}>구경해보기</button>
+          <Link to="/list">
+            <button className={cx("button")}>구경해보기</button>
+          </Link>
         </div>
       </div>
     </Layout>
