@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
+/** 생성하기 버튼 */
 export const CreateButton = () => {
   return (
     <div>

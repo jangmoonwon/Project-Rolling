@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "./MessagePages.module.scss";
+import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
-import { defaultImage, imageTest1, imageTest2 } from "./constant";
+import { DEFAULT_IMAGE, IMAGE_TEST1, IMAGE_TEST2 } from "./constant";
 import { NavBar } from "NavBar";
-import { SenderInput } from "../../sharing/Sender/SenderInput";
+import { NameInput } from "../../sharing/NameInput/NameInput";
 import { Profile } from "../../sharing/Profile/Profile";
 import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
 import { TextEditor } from "../../sharing/TextEditor/TextEditor";
@@ -12,22 +12,22 @@ import { CreateButton } from "../../sharing/CreateButton/CreateButton";
 const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
-  const [sender, setSender] = useState("");
-  const [profileImage, setProfileImage] = useState(defaultImage);
+  const [senderName, setSenderName] = useState("");
+  const [profileImage, setProfileImage] = useState(DEFAULT_IMAGE);
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
 
-  const profileImages = [imageTest1, imageTest2];
+  const profileImages = [IMAGE_TEST1, IMAGE_TEST2];
   const relationships = ["친구", "지인", "동료", "가족"];
-  const Fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
+  const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
   /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
 
-    console.log(`sender : ${sender}`);
+    console.log(`senderName : ${senderName}`);
     console.log(`profileImage : ${profileImage}`);
     console.log(`relationship : ${relationship}`);
     console.log(`content : ${content}`);
@@ -38,7 +38,11 @@ export const MessagePage = () => {
     <>
       <NavBar />
       <form className={cx("container")} onSubmit={handleSubmit}>
-        <SenderInput value={sender} setValue={setSender} />
+        <NameInput
+          value={senderName}
+          setValue={setSenderName}
+          title={"From."}
+        />
 
         <Profile
           value={profileImage}
@@ -59,7 +63,7 @@ export const MessagePage = () => {
           <DropdownMenuBar
             value={font}
             setValue={setFont}
-            data={Fonts}
+            data={fonts}
             text="폰트 선택"
           />
         </div>
