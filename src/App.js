@@ -5,7 +5,6 @@ import { MessagePage } from "./pages/MessagePage/MessagePage";
 import { BackgroundPage } from "pages/BackgroundPage/BackgroundPage";
 import PlayGround from "./Playground";
 import { LinkPage } from "pages/LinkPage/LinkPage";
-import { PostPage } from "pages/PostPage/PostPage";
 
 function App() {
   return (
@@ -13,9 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<LinkPage />} />
-        <Route path="/post" element={<PostPage />} />
+        <Route path="/post" element={<BackgroundPage />} />
         <Route path="/post/{id}/message" element={<MessagePage />} />
-        <Route path="/post" element={<BackgroundPage />}></Route>
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>
