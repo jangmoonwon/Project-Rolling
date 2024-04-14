@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
-import { NavBar } from "NavBar";
+import { Layout } from "layout/Layout";
 import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
@@ -30,8 +30,7 @@ export const BackgroundPage = () => {
   };
 
   return (
-    <>
-      <NavBar />
+    <Layout isHiddenButton={true}>
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={recipientName}
@@ -58,6 +57,6 @@ export const BackgroundPage = () => {
 
         <CreateButton />
       </form>
-    </>
+    </Layout>
   );
 };
