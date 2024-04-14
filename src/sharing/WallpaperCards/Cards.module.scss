@@ -1,0 +1,52 @@
+@import "src/styles/global.scss";
+
+.container {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cardBlock {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  border-radius: 6.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.colorButton {
+  width: 10.5rem;
+  height: 10.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.beige {
+  background-color: $color-orange200;
+}
+
+.purple {
+  background-color: $color-purple200;
+}
+
+.blue {
+  background-color: $color-blue200;
+}
+
+.green {
+  background-color: $color-green200;
+}
+
+.image {
+  width: 10.5rem;
+  height: 10.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+}

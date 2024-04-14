@@ -1,10 +1,11 @@
 import React from "react";
-import styles from "./Button.module.scss";
+import styles from "./CreateButton.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
-export const Button = () => {
+/** 생성하기 버튼 */
+export const CreateButton = () => {
   return (
     <div>
       <button className={cx("button")} type="submit">
