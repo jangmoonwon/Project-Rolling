@@ -7,6 +7,7 @@ const cx = classNames.bind(styles);
 /** 배경화면으로 제공되는 컬러 또는 이미지 */
 export const Cards = ({ allColors, allImages, color, image }) => {
   const { userColor, selectedColorId, setSelectedColorId } = allColors;
+  // eslint-disable-next-line no-unused-vars
   const { userImage, selectedImageId, setSelectedImageId } = allImages;
 
   const handleColorClick = (i) => {
@@ -55,7 +56,11 @@ export const Cards = ({ allColors, allImages, color, image }) => {
                   type="button"
                   onClick={() => handleImageClick(i)}
                 >
-                  <img className={cx("image")} src={item} />
+                  <img
+                    className={cx("image")}
+                    src={item}
+                    alt="배경화면 선택 이미지"
+                  />
                 </button>
                 {selectedImageId === i && (
                   <button>
