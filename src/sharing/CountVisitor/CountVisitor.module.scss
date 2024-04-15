@@ -1,0 +1,56 @@
+@import "src/styles/global.scss";
+
+.container {
+  @include font-regular(18px);
+  display: flex;
+  align-items: center;
+  p {
+    font-weight: 700;
+  }
+}
+
+.profile-count {
+  display: flex;
+  margin-right: 11px;
+  height: 28px;
+  position: relative;
+  width: 75px;
+
+  .images {
+    border: 2px solid white;
+    position: absolute;
+    height: 28px;
+    border-radius: 33.3px;
+  }
+
+  img {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 33.3px;
+  }
+}
+
+.images:nth-child(1) {
+  z-index: 1;
+}
+
+.images:nth-child(2) {
+  z-index: 2;
+  left: 15px;
+}
+
+.images:nth-child(3) {
+  z-index: 3;
+  left: 30px;
+}
+
+.images:nth-child(4) {
+  width: 28px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 12px;
+  z-index: 3;
+  left: 45px;
+  background-color: white;
+  border: 1px solid #e3e3e3;
+}

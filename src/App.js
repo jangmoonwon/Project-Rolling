@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/post/{id}/message" element={<MessagePage />} />
+        <Route path="/message" element={<MessagePage />} />
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>
