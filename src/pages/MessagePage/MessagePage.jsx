@@ -36,7 +36,7 @@ export const MessagePage = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar isHiddenButton={true} />
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={senderName}

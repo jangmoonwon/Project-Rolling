@@ -18,26 +18,42 @@ export const DropdownMenuBar = ({ value, setValue, data, text }) => {
     setIsOpen(false);
   };
 
+  // useEffect(() => {
+  //   if (!isOpen) {
+  //     setTimeout(() => {
+  //       setIsOpen(false);
+  //     }, 400);
+  //   }
+  // });
+
   return (
     <div className={cx("container")}>
       <h2 className={cx("title")}>{text}</h2>
-      <div className={cx("dropdownBlock")} onClick={toggleDropdown}>
+
+      <button className={cx("dropdownBlock")} onClick={toggleDropdown}>
         <ul>{value}</ul>
         <img src={isOpen ? ARROW_UP : ARROW_DOWN} alt="화살표 이미지" />
+      </button>
+
+      <div
+        className={cx(
+          `${isOpen ? "slide-fade-in-dropdown" : "slide-fade-out-dropdown"}`
+        )}
+      >
+        {isOpen && (
+          <ul className={cx("items")}>
+            {data.map((item, i) => (
+              <li
+                className={cx("item")}
+                key={i}
+                onClick={() => handleItemClick(item)}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {isOpen && (
-        <ul className={cx("items")}>
-          {data.map((item, i) => (
-            <li
-              className={cx("item")}
-              key={i}
-              onClick={() => handleItemClick(item)}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 };
