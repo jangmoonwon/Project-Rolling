@@ -1,0 +1,40 @@
+@import "src/styles/global.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.Header-service {
+  width: 1200px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.name {
+  @include font-bold(28px, $color-gray800);
+}
+
+.count-visitor {
+  display: flex;
+}
+
+.post-info {
+  display: flex;
+  align-items: center;
+}
+
+.partition28px {
+  background-color: $color-gray200;
+  height: 28px;
+  width: 1px;
+  margin: 0 28px 0 28px;
+}
+
+.partition13px {
+  background-color: $color-gray200;
+  height: 28px;
+  width: 1px;
+  margin: 0 13px 0 13px;
+}
