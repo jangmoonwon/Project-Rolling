@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<LinkPage />} />
         <Route path="/post" element={<BackgroundPage />} />
-        <Route path="/post/5864" element={<PostPage />} />
+        <Route path="/post/{id}" element={<PostPage />} />
         <Route path="/post/{id}/message" element={<MessagePage />} />
         <Route path="/message" element={<MessagePage />} />
         <Route path="*" element={<PlayGround />} />

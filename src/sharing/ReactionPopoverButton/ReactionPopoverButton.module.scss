@@ -1,0 +1,25 @@
+@import "src/styles/global.scss";
+
+.container {
+  position: relative;
+  margin-left: 0.8rem;
+}
+
+.popover-button {
+  gap: 1rem;
+  border-radius: 0.6rem;
+  border: 0.1rem solid $color-gray300;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
+  @include font-regular(1.6rem, $color-gray900);
+}
+
+.emoji-picker {
+  margin-top: 1rem;
+  position: absolute;
+  right: 1rem;
+  box-shadow: 0rem 0.2rem 1.2rem 0rem rgba(0, 0, 0, 0.08);
+}
