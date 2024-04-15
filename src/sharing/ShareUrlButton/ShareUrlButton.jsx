@@ -14,7 +14,7 @@ export function ShareUrlButton() {
 
   return (
     <div className={cx("container")} onClick={getUrl}>
-      <img src="images/shareIcon.svg" alt="url 공유 버튼" />
+      <img src="../images/shareIcon.svg" alt="url 공유 버튼" />
     </div>
   );
 }
