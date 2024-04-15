@@ -23,21 +23,22 @@
   height: fit-content;
   border-radius: 1.6rem;
   background-color: $color-surface;
-  margin: 0;
 }
 
 section:nth-of-type(odd) {
   grid-template-areas:
-  "label image"
-  "title image"
-  "description image";
+    "label image"
+    "title image"
+    "description image"
+    ". image";
   padding: 6rem 0rem 6rem 6rem;
 }
 section:nth-of-type(even) {
   grid-template-areas:
-  "image label"
-  "image title"
-  "image description";
+    "image label"
+    "image title"
+    "image description"
+    "image .";
   padding: 6rem 19.2rem 6rem 0;
 }
 
@@ -49,6 +50,8 @@ section:nth-of-type(even) {
   grid-area: label;
   width: 8rem;
   height: 3.2rem;
+  margin-bottom: 1.6rem;
+  line-height: 2rem;
   border-radius: 5rem;
   background-color: $color-purple600;
 }
@@ -56,15 +59,19 @@ section:nth-of-type(even) {
 .title {
   @include font-bold(2.4rem, $color-gray900);
   grid-area: title;
+  margin-bottom: 0.8rem;
+  line-height: 3.6rem;
 }
 
 .description {
   @include font-regular(1.8rem, $color-gray500);
   grid-area: description;
+  line-height: 2.8rem;
 }
 
 .content-image {
   width: 100%;
+  height: fit-content;
   grid-area: image;
 }
 
