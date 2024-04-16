@@ -7,13 +7,13 @@
 }
 
 .Header-service {
-  width: 1200px;
+  width: 120rem;
   justify-content: space-between;
   display: flex;
 }
 
 .name {
-  @include font-bold(28px, $color-gray800);
+  @include font-bold(2.8rem, $color-gray800);
 }
 
 .count-visitor {
@@ -27,14 +27,14 @@
 
 .partition28px {
   background-color: $color-gray200;
-  height: 28px;
-  width: 1px;
-  margin: 0 28px 0 28px;
+  height: 2.8rem;
+  width: 0.1rem;
+  margin: 0 2.8rem 0 2.8rem;
 }
 
 .partition13px {
   background-color: $color-gray200;
-  height: 28px;
-  width: 1px;
-  margin: 0 13px 0 13px;
+  height: 2.8rem;
+  width: 0.1rem;
+  margin: 0 1.3rem 0 1.3rem;
 }

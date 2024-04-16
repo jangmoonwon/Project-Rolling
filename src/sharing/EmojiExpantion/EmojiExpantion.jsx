@@ -20,8 +20,8 @@ export function EmojiExpantion({ reactions }) {
       {isOpen && (
         <div className={cx("grid-container")}>
           <div className={cx("grid-style")}>
-            {reactions.slice(0, 8).map((item) => (
-              <BadgeEmoji emoji={item.emoji} count={item.count} />
+            {reactions.slice(0, 8).map((item, i) => (
+              <BadgeEmoji key={i} emoji={item.emoji} count={item.count} />
             ))}
           </div>
         </div>
