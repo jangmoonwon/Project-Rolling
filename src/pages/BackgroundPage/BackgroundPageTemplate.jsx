@@ -2,11 +2,9 @@ import { useState } from "react";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
-import { NameInput } from "sharing/NameInput/NameInput";
-import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
-import { CreateButton } from "sharing/CreateButton/CreateButton";
+import { NameInput, Wallpaper, CreateButton } from "sharing";
 import { IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4 } from "./constant";
-
+import { createRecipient } from "util";
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
@@ -24,9 +22,19 @@ export const BackgroundPage = () => {
     // 새로고침 방지
     event.preventDefault();
 
+    const defaultColor = "beige";
+    const defaultImage = "";
+    const selectedColor = color[selectedColorId]
+      ? color[selectedColorId]
+      : defaultColor;
+    const selectedImage = image[selectedImageId]
+      ? image[selectedImageId]
+      : defaultImage;
+
     console.log(`recipientName : ${recipientName}`);
-    console.log(`backgroundColor : ${color[selectedColorId]}`);
-    console.log(`backgroundImageURL : ${image[selectedImageId]}`);
+    console.log(`backgroundColor : ${selectedColor}`);
+    console.log(`backgroundImageURL : ${selectedImage}`);
+    //createRecipient(recipientName, selectedColor, selectedImage);
   };
 
   return (

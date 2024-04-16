@@ -4,6 +4,7 @@ import {
   getRecipientById,
   getMessages,
   getReactions,
+  getBackgroundImages,
   createRecipient,
   createMessage,
   deleteRecipient,
@@ -36,7 +37,11 @@ const PlayGround = () => {
 
   const testCreateRecipient = async () => {
     try {
-      const data = await createRecipient("새 대상", "blue", "https://picsum.photos/id/683/3840/2160");
+      const data = await createRecipient(
+        "새 대상",
+        "blue",
+        "https://picsum.photos/id/683/3840/2160"
+      );
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -111,6 +116,15 @@ const PlayGround = () => {
     }
   };
 
+  const testGetBackgroundImages = async () => {
+    try {
+      const data = await getBackgroundImages();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <button onClick={testGetRecipients}>getRecipients</button>
@@ -122,6 +136,7 @@ const PlayGround = () => {
       <button onClick={testDeleteMessage}>deleteMessage</button>
       <button onClick={testAddReaction}>addReaction</button>
       <button onClick={testGetReactions}>getReactions</button>
+      <button onClick={testGetBackgroundImages}>getBackgroundImages</button>
     </div>
   );
 };
