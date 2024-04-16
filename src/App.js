@@ -9,8 +9,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/list" element={<LinkPage />} />
-        <Route path="/post" element={<BackgroundPage />} />
-        <Route path="/post/{id}/message" element={<MessagePage />} />
+        <Route path="/post">
+          <Route index element={<BackgroundPage />} />
+          <Route path=":postId/message" element={<MessagePage />} />
+        </Route>
+
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>

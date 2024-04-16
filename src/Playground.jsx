@@ -50,7 +50,7 @@ const PlayGround = () => {
   const testDeleteRecipient = async () => {
     try {
       // 삭제할 대상의 ID. 실제 존재하는 ID로 변경해야 함
-      const recipientId = 5794;
+      const recipientId = 5939;
       const status = await deleteRecipient(recipientId);
       console.log(`Recipient deleted with status: ${status}`);
     } catch (error) {
