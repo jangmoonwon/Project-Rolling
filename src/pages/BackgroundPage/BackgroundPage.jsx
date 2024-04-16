@@ -1,15 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
 import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
-import { IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4 } from "./constant";
+
+import { getBackgroundImages } from "util/api/getBackgroundImages";
 
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
+  const [testImg, setTestImg] = useState([]);
+
+  async function test() {
+    try {
+      const { imageUrls } = await getBackgroundImages();
+      setTestImg(imageUrls);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    test();
+  }, []);
+
+  const image = [...testImg];
+
+  // --------
+
   const [recipientName, setRecipientName] = useState("");
   const [userColor, setUserColor] = useState("clickButton");
   const [userImage, setUserImage] = useState("button");
@@ -17,7 +37,6 @@ export const BackgroundPage = () => {
   const [selectedImageId, setSelectedImageId] = useState(null);
 
   const color = ["beige", "purple", "blue", "green"];
-  const image = [IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4];
 
   /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
