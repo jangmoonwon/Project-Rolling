@@ -1,10 +1,7 @@
 import "styles/reset.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "./pages/HomePage/HomePage";
-import { MessagePage } from "./pages/MessagePage/MessagePage";
-import { BackgroundPage } from "pages/BackgroundPage/BackgroundPage";
+import { HomePage, MessagePage, BackgroundPage, LinkPage } from "./pages";
 import PlayGround from "./Playground";
-import { LinkPage } from "pages/LinkPage/LinkPage";
 
 function App() {
   return (
