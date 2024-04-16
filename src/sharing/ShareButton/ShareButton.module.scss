@@ -42,16 +42,16 @@
   padding: 1.9rem 3rem;
   justify-content: space-between;
   position: fixed;
-  bottom: 40px;
+  bottom: 4rem;
   transform: translateX(-50%);
   left: 50%;
   background-color: black;
-  border-radius: 8px;
+  border-radius: 0.8rem;
   background: rgba(0, 0, 0, 0.8);
 }
 
 .toast-text {
-  @include font-regular(16px, white);
+  @include font-regular(1.6rem, white);
   display: flex;
   align-items: center;
   gap: 1.2rem;
