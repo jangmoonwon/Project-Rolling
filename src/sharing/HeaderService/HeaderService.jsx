@@ -3,8 +3,8 @@ import styles from "./HeaderService.module.scss";
 import classNames from "classnames/bind";
 import { SortedEmojis } from "sharing/SortedEmojis/SortedEmojis";
 import { EmojiExpantion } from "sharing/EmojiExpantion/EmojiExpantion";
-import { ReactionPopoverButton } from "sharing/ReactionPopover/ReactionPopoverButton";
 import { ShareUrlButton } from "sharing/ShareUrlButton/ShareUrlButton";
+import { ReactionPopoverButton } from "../ReactionPopoverButton/ReactionPopoverButton";
 
 const cx = classNames.bind(styles);
 
