@@ -7,14 +7,15 @@ import { Profile } from "../../sharing/Profile/Profile";
 import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
 import { TextEditor } from "../../sharing/TextEditor/TextEditor";
 import { CreateButton } from "../../sharing/CreateButton/CreateButton";
+
 import { getProfileImages } from "util/api/getProfileImages";
 
 const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
+  // 테스트
   const [profileAllImage, setprofileAllImage] = useState([]);
 
-  // 수정하기
   async function fetchImages() {
     try {
       const { imageUrls } = await getProfileImages();
@@ -31,11 +32,9 @@ export const MessagePage = () => {
 
   const profileImages = [...profileAllImage];
 
-  // -----
+  // --------
 
   const [senderName, setSenderName] = useState("");
-
-  // 빈 배열로 변경
   const [profileImage, setProfileImage] = useState("");
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
@@ -44,7 +43,7 @@ export const MessagePage = () => {
   const relationships = ["친구", "지인", "동료", "가족"];
   const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
-  /** onSubmit console 테스트 나중에 삭제 */
+  /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
@@ -58,7 +57,7 @@ export const MessagePage = () => {
 
   return (
     <>
-      <NavBar isHiddenButton={true} />
+      <NavBar />
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={senderName}

@@ -11,25 +11,22 @@ import { getBackgroundImages } from "util/api/getBackgroundImages";
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
-  const [testImg, setTestImg] = useState([]);
+  // 테스트
+  const [allImage, setAllImage] = useState([]);
 
   // 수정하기
-  async function test() {
+  async function fetchImages() {
     try {
       const { imageUrls } = await getBackgroundImages();
-      setTestImg(imageUrls);
+      setAllImage(imageUrls);
     } catch (error) {
       console.error(error);
     }
   }
 
   useEffect(() => {
-    test();
+    fetchImages();
   }, []);
-
-  const image = [...testImg];
-
-  // --------
 
   const [recipientName, setRecipientName] = useState("");
   const [userColor, setUserColor] = useState("clickButton");
@@ -38,6 +35,7 @@ export const BackgroundPage = () => {
   const [selectedImageId, setSelectedImageId] = useState(null);
 
   const color = ["beige", "purple", "blue", "green"];
+  const image = [...allImage];
 
   /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
