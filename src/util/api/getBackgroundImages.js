@@ -1,3 +1,8 @@
+/**
+ * 
+ * @returns 배경 이미지
+ */
+
 export async function getBackgroundImages() {
     const url = "https://rolling-api.vercel.app/background-images/";
     try {

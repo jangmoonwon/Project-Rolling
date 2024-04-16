@@ -1,3 +1,14 @@
+/**
+ * 
+ * @param {*} recipientId: 경로로 받아온 id값
+ * @param {*} sender: 이름
+ * @param {*} relationship: 관계
+ * @param {*} content: 메시지 contents
+ * @param {*} font: 폰트
+ * @param {*} profileImageURL: 프로필 이미지 
+ * @returns: 생성한 메시지.
+ */
+
 export async function createMessage(
 	recipientId,
 	sender,
