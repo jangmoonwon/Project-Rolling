@@ -11,14 +11,12 @@ import { getBackgroundImages } from "util/api/getBackgroundImages";
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
-  // 테스트
-  const [allImage, setAllImage] = useState([]);
+  const [backgroundAllImage, setBackgroundAllImage] = useState([]);
 
-  // 수정하기
   async function fetchImages() {
     try {
       const { imageUrls } = await getBackgroundImages();
-      setAllImage(imageUrls);
+      setBackgroundAllImage(imageUrls);
     } catch (error) {
       console.error(error);
     }
@@ -35,7 +33,7 @@ export const BackgroundPage = () => {
   const [selectedImageId, setSelectedImageId] = useState(null);
 
   const color = ["beige", "purple", "blue", "green"];
-  const image = [...allImage];
+  const image = [...backgroundAllImage];
 
   /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
@@ -73,7 +71,7 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <CreateButton />
+        <CreateButton userName={recipientName} />
       </form>
     </Layout>
   );

@@ -13,7 +13,6 @@ import { getProfileImages } from "util/api/getProfileImages";
 const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
-  // 테스트
   const [profileAllImage, setprofileAllImage] = useState([]);
 
   async function fetchImages() {
@@ -89,7 +88,7 @@ export const MessagePage = () => {
           />
         </div>
 
-        <CreateButton />
+        <CreateButton userName={senderName} content={content} />
       </form>
     </>
   );
