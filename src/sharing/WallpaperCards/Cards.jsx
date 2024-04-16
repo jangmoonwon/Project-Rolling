@@ -58,6 +58,7 @@ export const Cards = ({ allColors, allImages, color, image }) => {
                 >
                   <img
                     className={cx("image")}
+                    style={{ opacity: selectedImageId === i ? 0.5 : 1 }}
                     src={item}
                     alt="배경화면 선택 이미지"
                   />
