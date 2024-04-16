@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
@@ -70,8 +71,9 @@ export const BackgroundPage = () => {
           color={color}
           image={image}
         />
-
-        <CreateButton userName={recipientName} />
+        <Link to="/post/{id}">
+          <CreateButton userName={recipientName} />
+        </Link>
       </form>
     </Layout>
   );
