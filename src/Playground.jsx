@@ -36,11 +36,7 @@ const PlayGround = () => {
 
   const testCreateRecipient = async () => {
     try {
-      const data = await createRecipient(
-        "새 대상",
-        "blue",
-        "https://picsum.photos/id/683/3840/2160"
-      );
+      const data = await createRecipient("새 대상", "blue", "https://picsum.photos/id/683/3840/2160");
       console.log(data);
     } catch (error) {
       console.error(error);

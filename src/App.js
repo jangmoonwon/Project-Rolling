@@ -11,7 +11,7 @@ function App() {
         <Route path="/list" element={<LinkPage />} />
         <Route path="/post">
           <Route index element={<BackgroundPage />} />
-          <Route path=":postId/message" element={<MessagePage />} />
+          <Route path=":id/message" element={<MessagePage />} />
         </Route>
 
         <Route path="*" element={<PlayGround />} />
