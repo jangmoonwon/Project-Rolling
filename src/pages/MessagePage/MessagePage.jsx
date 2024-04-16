@@ -8,7 +8,6 @@ import { Profile } from "../../sharing/Profile/Profile";
 import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
 import { TextEditor } from "../../sharing/TextEditor/TextEditor";
 import { CreateButton } from "../../sharing/CreateButton/CreateButton";
-
 import { getProfileImages } from "util/api/getProfileImages";
 
 const cx = classNames.bind(styles);
@@ -30,29 +29,19 @@ export const MessagePage = () => {
     fetchImages();
   }, []);
 
-  const profileImages = [...profileAllImage];
-
-  // --------
-
   const [senderName, setSenderName] = useState("");
   const [profileImage, setProfileImage] = useState("");
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
 
+  const profileImages = [...profileAllImage];
   const relationships = ["친구", "지인", "동료", "가족"];
   const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
-  /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
-
-    console.log(`senderName : ${senderName}`);
-    console.log(`profileImage : ${profileImage}`);
-    console.log(`relationship : ${relationship}`);
-    console.log(`content : ${content}`);
-    console.log(`font : ${font}`);
   };
 
   return (

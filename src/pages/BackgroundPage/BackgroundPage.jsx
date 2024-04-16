@@ -6,7 +6,6 @@ import { Layout } from "layout/Layout";
 import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
-
 import { getBackgroundImages } from "util/api/getBackgroundImages";
 
 const cx = classNames.bind(styles);
@@ -36,14 +35,9 @@ export const BackgroundPage = () => {
   const color = ["beige", "purple", "blue", "green"];
   const image = [...backgroundAllImage];
 
-  /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
-
-    console.log(`recipientName : ${recipientName}`);
-    console.log(`backgroundColor : ${color[selectedColorId]}`);
-    console.log(`backgroundImageURL : ${image[selectedImageId]}`);
   };
 
   return (
