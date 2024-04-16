@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
-import { DEFAULT_IMAGE } from "./constant";
 import { NavBar } from "NavBar";
 import { NameInput } from "../../sharing/NameInput/NameInput";
 import { Profile } from "../../sharing/Profile/Profile";
@@ -13,29 +12,31 @@ import { getProfileImages } from "util/api/getProfileImages";
 const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
-  const [testImg, setTestImg] = useState([]);
+  const [profileAllImage, setprofileAllImage] = useState([]);
 
-  async function test() {
+  // 수정하기
+  async function fetchImages() {
     try {
       const { imageUrls } = await getProfileImages();
-      setTestImg(imageUrls);
+      setProfileImage(imageUrls[0]);
+      setprofileAllImage(imageUrls.slice(1));
     } catch (error) {
       console.error(error);
     }
   }
 
   useEffect(() => {
-    test();
+    fetchImages();
   }, []);
 
-  const profileImages = [...testImg];
+  const profileImages = [...profileAllImage];
 
   // -----
 
   const [senderName, setSenderName] = useState("");
 
   // 빈 배열로 변경
-  const [profileImage, setProfileImage] = useState(DEFAULT_IMAGE);
+  const [profileImage, setProfileImage] = useState("");
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");

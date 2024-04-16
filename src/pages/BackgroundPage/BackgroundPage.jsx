@@ -13,6 +13,7 @@ const cx = classNames.bind(styles);
 export const BackgroundPage = () => {
   const [testImg, setTestImg] = useState([]);
 
+  // 수정하기
   async function test() {
     try {
       const { imageUrls } = await getBackgroundImages();
