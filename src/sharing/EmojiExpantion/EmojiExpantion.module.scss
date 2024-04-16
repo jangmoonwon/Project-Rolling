@@ -1,0 +1,26 @@
+@import "src/styles/global.scss";
+
+.container {
+  position: relative;
+}
+
+.grid-container {
+  margin-top: 0.1rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #b6b6b6;
+  background: white;
+  padding: 2.4rem;
+  position: absolute;
+  right: 1rem;
+  box-shadow: 0rem 0.2rem 1.2rem 0rem rgba(0, 0, 0, 0.08);
+}
+
+.grid-style {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.8rem;
+}
+
+.arrow-button {
+  padding: 0.6rem;
+}
