@@ -55,6 +55,7 @@ export const BackgroundPage = () => {
           title={"To."}
           text={"받는 사람 "}
         />
+
         <Wallpaper
           allColors={{
             userColor,
@@ -71,6 +72,7 @@ export const BackgroundPage = () => {
           color={color}
           image={image}
         />
+
         <Link to="/post/{id}">
           <CreateButton userName={recipientName} />
         </Link>
