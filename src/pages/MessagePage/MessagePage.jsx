@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
 import { DEFAULT_IMAGE, IMAGE_TEST1, IMAGE_TEST2 } from "./constant";
 import { NavBar } from "NavBar";
-import { NameInput } from "../../sharing/NameInput/NameInput";
-import { Profile } from "../../sharing/Profile/Profile";
-import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
-import { TextEditor } from "../../sharing/TextEditor/TextEditor";
-import { CreateButton } from "../../sharing/CreateButton/CreateButton";
+import {
+  NameInput,
+  Profile,
+  DropdownMenuBar,
+  TextEditor,
+  CreateButton,
+} from "sharing";
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +20,7 @@ export const MessagePage = () => {
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
+  const { id } = useParams();
 
   const profileImages = [IMAGE_TEST1, IMAGE_TEST2];
   const relationships = ["친구", "지인", "동료", "가족"];
@@ -27,6 +31,7 @@ export const MessagePage = () => {
     // 새로고침 방지
     event.preventDefault();
 
+    console.log(id);
     console.log(`senderName : ${senderName}`);
     console.log(`profileImage : ${profileImage}`);
     console.log(`relationship : ${relationship}`);
