@@ -1,5 +1,6 @@
 import { Layout } from "layout/Layout";
 import { HeaderService } from "../../sharing/HeaderService/HeaderService";
+import { EmptyPostCard } from "sharing/EmptyPostCard/EmptyPostCard";
 
 const recentMessagesTest = [
   {
@@ -110,6 +111,7 @@ export const PostPage = () => {
         topReactions={topReactionsTest}
         reactions={reactionsTest}
       />
+      <EmptyPostCard />
     </Layout>
   );
 };
