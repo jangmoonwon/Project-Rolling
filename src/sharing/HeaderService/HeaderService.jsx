@@ -3,8 +3,8 @@ import styles from "./HeaderService.module.scss";
 import classNames from "classnames/bind";
 import { SortedEmojis } from "sharing/SortedEmojis/SortedEmojis";
 import { EmojiExpantion } from "sharing/EmojiExpantion/EmojiExpantion";
-import { ShareUrlButton } from "sharing/ShareUrlButton/ShareUrlButton";
 import { ReactionPopoverButton } from "../ReactionPopoverButton/ReactionPopoverButton";
+import { ShareButton } from "../ShareButton/ShareButton";
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +35,7 @@ export function HeaderService({
 
           <div className={cx("partition13px")}></div>
 
-          <ShareUrlButton />
+          <ShareButton />
         </div>
       </div>
     </div>

@@ -1,0 +1,58 @@
+@import "src/styles/global.scss";
+
+.container {
+  position: relative;
+}
+
+.share-icon-button {
+  border-radius: 0.6rem;
+  padding: 0.6rem 1.6rem;
+  border: 0.1rem solid $color-gray300;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-button-container {
+  width: 13.8rem;
+  background-color: white;
+  position: absolute;
+  right: 0.2rem;
+  top: 4.5rem;
+  padding: 1rem 0.1rem;
+  border-radius: 0.8rem;
+  border: 0.1rem solid $color-gray300;
+  box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
+}
+
+.share-button {
+  padding: 1.2rem 1.6rem;
+  @include font-regular(1.6rem, $color-gray900);
+
+  &:hover {
+    background-color: $color-gray100;
+  }
+}
+
+.toast {
+  display: flex;
+  width: 52.4rem;
+  height: 6.4rem;
+  padding: 1.9rem 3rem;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 4rem;
+  transform: translateX(-50%);
+  left: 50%;
+  background-color: black;
+  border-radius: 0.8rem;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.toast-text {
+  @include font-regular(1.6rem, white);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
