@@ -7,6 +7,7 @@ import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
 import { getBackgroundImages } from "util/api/getBackgroundImages";
+import { createRecipient } from "util";
 
 const cx = classNames.bind(styles);
 
@@ -35,9 +36,21 @@ export const BackgroundPage = () => {
   const color = ["beige", "purple", "blue", "green"];
   const image = [...backgroundAllImage];
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     // 새로고침 방지
     event.preventDefault();
+
+    const defaultColor = "beige";
+    const defaultImage = "";
+    const selectedColor = color[selectedColorId]
+      ? color[selectedColorId]
+      : defaultColor;
+    const selectedImage = image[selectedImageId]
+      ? image[selectedImageId]
+      : defaultImage;
+
+    const test = createRecipient(recipientName, selectedColor, selectedImage);
+    console.log(test);
   };
 
   return (
@@ -67,9 +80,7 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <Link to="/post/{id}">
-          <CreateButton userName={recipientName} />
-        </Link>
+        <CreateButton userName={recipientName} />
       </form>
     </Layout>
   );
