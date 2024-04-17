@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
-import { DEFAULT_IMAGE, IMAGE_TEST1, IMAGE_TEST2 } from "./constant";
+import { getProfileImages } from "util/api/getProfileImages";
+import { useParams } from "react-router-dom";
 import { Layout } from "layout/Layout";
 import {
   NameInput,
@@ -15,28 +16,36 @@ import {
 const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
+  const [profileAllImage, setprofileAllImage] = useState([]);
+
+  async function fetchImages() {
+    try {
+      const { imageUrls } = await getProfileImages();
+      setProfileImage(imageUrls[0]);
+      setprofileAllImage(imageUrls.slice(1));
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
   const [senderName, setSenderName] = useState("");
-  const [profileImage, setProfileImage] = useState(DEFAULT_IMAGE);
+  const [profileImage, setProfileImage] = useState("");
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
   const { id } = useParams();
 
-  const profileImages = [IMAGE_TEST1, IMAGE_TEST2];
+  const profileImages = [...profileAllImage];
   const relationships = ["친구", "지인", "동료", "가족"];
   const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
-  /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
-
-    console.log(id);
-    console.log(`senderName : ${senderName}`);
-    console.log(`profileImage : ${profileImage}`);
-    console.log(`relationship : ${relationship}`);
-    console.log(`content : ${content}`);
-    console.log(`font : ${font}`);
   };
 
   return (
@@ -72,7 +81,9 @@ export const MessagePage = () => {
           />
         </div>
 
-        <CreateButton />
+        <Link to="/post/{id}">
+          <CreateButton userName={senderName} content={content} />
+        </Link>
       </form>
     </Layout>
   );

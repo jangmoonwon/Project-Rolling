@@ -1,32 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
 import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
-import { IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4 } from "./constant";
+import { getBackgroundImages } from "util/api/getBackgroundImages";
 
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
+  const [backgroundAllImage, setBackgroundAllImage] = useState([]);
+
+  async function fetchImages() {
+    try {
+      const { imageUrls } = await getBackgroundImages();
+      setBackgroundAllImage(imageUrls);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
+
   const [recipientName, setRecipientName] = useState("");
-  const [userColor, setuserColor] = useState("clickButton");
+  const [userColor, setUserColor] = useState("clickButton");
   const [userImage, setUserImage] = useState("button");
   const [selectedColorId, setSelectedColorId] = useState(0);
   const [selectedImageId, setSelectedImageId] = useState(null);
 
   const color = ["beige", "purple", "blue", "green"];
-  const image = [IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4];
+  const image = [...backgroundAllImage];
 
-  /** onSubmit console 테스트 */
   const handleSubmit = (event) => {
     // 새로고침 방지
     event.preventDefault();
-
-    console.log(`recipientName : ${recipientName}`);
-    console.log(`backgroundColor : ${color[selectedColorId]}`);
-    console.log(`backgroundImageURL : ${image[selectedImageId]}`);
   };
 
   return (
@@ -38,10 +49,11 @@ export const BackgroundPage = () => {
           title={"To."}
           text={"받는 사람 "}
         />
+
         <Wallpaper
           allColors={{
             userColor,
-            setuserColor,
+            setUserColor,
             selectedColorId,
             setSelectedColorId,
           }}
@@ -55,7 +67,9 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <CreateButton />
+        <Link to="/post/{id}">
+          <CreateButton userName={recipientName} />
+        </Link>
       </form>
     </Layout>
   );

@@ -37,7 +37,7 @@
 }
 
 .errorMessage {
-  @include font-regular(0.75rem, $color-error, "Pretendard");
+  @include font-regular(1rem, $color-error, "Pretendard");
   font-style: normal;
   font-weight: 400;
   line-height: 1.125rem;
