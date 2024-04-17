@@ -1,10 +1,8 @@
 import "styles/reset.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "./pages/HomePage/HomePage";
-import { MessagePage } from "./pages/MessagePage/MessagePage";
-import { BackgroundPage } from "pages/BackgroundPage/BackgroundPage";
+import { HomePage, MessagePage, BackgroundPage, ListPage } from "./pages";
 import PlayGround from "./Playground";
-import { LinkPage } from "pages/LinkPage/LinkPage";
+
 import { PostPage } from "./pages/PostPage/PostPage";
 
 function App() {
@@ -12,11 +10,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/list" element={<LinkPage />} />
+        <Route path="/list" element={<ListPage />} />
+        <Route path="/post">
+          <Route index element={<BackgroundPage />} />
+          <Route path=":id" element={<PostPage />} />
+          <Route path=":id/message" element={<MessagePage />} />
+        </Route>
         <Route path="/post" element={<BackgroundPage />} />
-        <Route path="/post/{id}" element={<PostPage />} />
-        <Route path="/post/{id}/message" element={<MessagePage />} />
-        <Route path="/message" element={<MessagePage />} />
+
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>

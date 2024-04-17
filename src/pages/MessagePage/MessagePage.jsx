@@ -2,13 +2,16 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
-import { NavBar } from "NavBar";
-import { NameInput } from "../../sharing/NameInput/NameInput";
-import { Profile } from "../../sharing/Profile/Profile";
-import { DropdownMenuBar } from "../../sharing/DropdownMenuBar/DropdownMenuBar";
-import { TextEditor } from "../../sharing/TextEditor/TextEditor";
-import { CreateButton } from "../../sharing/CreateButton/CreateButton";
 import { getProfileImages } from "util/api/getProfileImages";
+import { useParams } from "react-router-dom";
+import { Layout } from "layout/Layout";
+import {
+  NameInput,
+  Profile,
+  DropdownMenuBar,
+  TextEditor,
+  CreateButton,
+} from "sharing";
 
 const cx = classNames.bind(styles);
 
@@ -34,6 +37,7 @@ export const MessagePage = () => {
   const [relationship, setRelationship] = useState("지인");
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
+  const { id } = useParams();
 
   const profileImages = [...profileAllImage];
   const relationships = ["친구", "지인", "동료", "가족"];
@@ -45,8 +49,7 @@ export const MessagePage = () => {
   };
 
   return (
-    <>
-      <NavBar isHiddenButton={true} />
+    <Layout isHiddenButton={true}>
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={senderName}
@@ -82,6 +85,6 @@ export const MessagePage = () => {
           <CreateButton userName={senderName} content={content} />
         </Link>
       </form>
-    </>
+    </Layout>
   );
 };
