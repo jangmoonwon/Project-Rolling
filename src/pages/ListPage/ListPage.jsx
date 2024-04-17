@@ -1,5 +1,4 @@
 import { Layout } from "layout/Layout";
-import { PostCardLayout } from "../../sharing/PostCardLayout/PostCardLayout";
 
 export const ListPage = () => {
   return (
