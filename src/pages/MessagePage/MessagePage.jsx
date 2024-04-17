@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
 import { DEFAULT_IMAGE, IMAGE_TEST1, IMAGE_TEST2 } from "./constant";
-import { NavBar } from "NavBar";
+import { Layout } from "layout/Layout";
 import {
   NameInput,
   Profile,
@@ -40,8 +40,7 @@ export const MessagePage = () => {
   };
 
   return (
-    <>
-      <NavBar />
+    <Layout isHiddenButton={true}>
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={senderName}
@@ -75,6 +74,6 @@ export const MessagePage = () => {
 
         <CreateButton />
       </form>
-    </>
+    </Layout>
   );
 };
