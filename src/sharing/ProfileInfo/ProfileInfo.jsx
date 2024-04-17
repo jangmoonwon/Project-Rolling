@@ -26,7 +26,7 @@ export const ProfileInfo = ({ profileImage, name, relationship }) => {
   return (
     <div className={cx("container")}>
       <div className={cx("image")}>
-        <img src={profileImage} />
+        <img src={profileImage} alt="프로필 이미지" />
       </div>
       <div className={cx("info-wrapper")}>
         <div className={cx("writter-name")}>
@@ -34,7 +34,7 @@ export const ProfileInfo = ({ profileImage, name, relationship }) => {
           <div className={cx("name")}>{name}</div>
         </div>
         <div className={cx("badge")}>
-          <img src={badge} />
+          <img src={badge} alt="배지 이미지" />
         </div>
       </div>
     </div>
