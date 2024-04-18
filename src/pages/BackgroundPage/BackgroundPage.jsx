@@ -1,15 +1,25 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
 import { NameInput, Wallpaper, CreateButton } from "sharing";
-import { getBackgroundImages } from "util";
+import { getBackgroundImages, createRecipient } from "util";
 
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
   const [backgroundAllImage, setBackgroundAllImage] = useState([]);
+  const [recipientName, setRecipientName] = useState("");
+  const [userColor, setUserColor] = useState("clickButton");
+  const [userImage, setUserImage] = useState("button");
+  const [selectedColorId, setSelectedColorId] = useState(0);
+  const [selectedImageId, setSelectedImageId] = useState(null);
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const color = ["beige", "purple", "blue", "green"];
+  const image = [...backgroundAllImage];
 
   async function fetchImages() {
     try {
@@ -24,18 +34,26 @@ export const BackgroundPage = () => {
     fetchImages();
   }, []);
 
-  const [recipientName, setRecipientName] = useState("");
-  const [userColor, setUserColor] = useState("clickButton");
-  const [userImage, setUserImage] = useState("button");
-  const [selectedColorId, setSelectedColorId] = useState(0);
-  const [selectedImageId, setSelectedImageId] = useState(null);
-
-  const color = ["beige", "purple", "blue", "green"];
-  const image = [...backgroundAllImage];
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     // 새로고침 방지
     event.preventDefault();
+
+    const defaultColor = "beige";
+    const defaultImage = "";
+    const selectedColor = color[selectedColorId]
+      ? color[selectedColorId]
+      : defaultColor;
+    const selectedImage = image[selectedImageId]
+      ? image[selectedImageId]
+      : defaultImage;
+
+    createRecipient(recipientName, selectedColor, selectedImage)
+      .then((responseData) => {
+        navigate(`/post/${responseData.id}`); // 성공적으로 메시지를 생성한 후에 경로 이동
+      })
+      .catch((error) => {
+        console.error("Message creation failed:", error);
+      });
   };
 
   return (
@@ -65,9 +83,7 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <Link to="/post/{id}">
-          <CreateButton userName={recipientName} />
-        </Link>
+        <CreateButton userName={recipientName} />
       </form>
     </Layout>
   );
