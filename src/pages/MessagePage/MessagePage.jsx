@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
 import { getProfileImages } from "util/api/getProfileImages";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Layout } from "layout/Layout";
 import {
   NameInput,
@@ -12,6 +12,7 @@ import {
   TextEditor,
   CreateButton,
 } from "sharing";
+import { createMessage } from "util";
 
 const cx = classNames.bind(styles);
 
@@ -38,6 +39,7 @@ export const MessagePage = () => {
   const [content, setContent] = useState("");
   const [font, setFont] = useState("Noto Sans");
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const profileImages = [...profileAllImage];
   const relationships = ["친구", "지인", "동료", "가족"];
@@ -45,6 +47,14 @@ export const MessagePage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    createMessage(id, senderName, relationship, content, font, profileImage)
+      .then(() => {
+        navigate(`/post/${id}`); // 성공적으로 메시지를 생성한 후에 경로 이동
+      })
+      .catch((error) => {
+        console.error("Message creation failed:", error);
+      });
   };
 
   return (
@@ -80,9 +90,7 @@ export const MessagePage = () => {
           />
         </div>
 
-        <Link to="/post/{id}">
-          <CreateButton userName={senderName} content={content} />
-        </Link>
+        <CreateButton userName={senderName} content={content} />
       </form>
     </Layout>
   );
