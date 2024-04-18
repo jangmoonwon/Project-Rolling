@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CardContent.module.scss";
 import classNames from "classnames/bind";
-import "../../styles/global.scss";
 
 const cx = classNames.bind(styles);
 
@@ -31,18 +30,11 @@ export const CardContent = ({ content, font }) => {
     return styleData.styleClassName;
   }
 
-  const customStyle = {
-    fontFamily: style(),
-    fontSize: "1.5rem",
-    color: "black",
-  };
-
   return (
     <div className={cx("bottom")}>
       <div className={cx(style())}>{content}</div>
       <div
-        className="nanumpenscript"
-        style={customStyle}
+        className={cx(style())}
         dangerouslySetInnerHTML={{ __html: content }}
       ></div>
     </div>
