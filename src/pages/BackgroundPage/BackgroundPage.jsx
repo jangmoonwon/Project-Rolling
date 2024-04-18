@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
@@ -7,6 +7,7 @@ import { NameInput } from "sharing/NameInput/NameInput";
 import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
 import { CreateButton } from "sharing/CreateButton/CreateButton";
 import { getBackgroundImages } from "util/api/getBackgroundImages";
+import { useParams } from "react-router-dom";
 import { createRecipient } from "util";
 
 const cx = classNames.bind(styles);
@@ -18,11 +19,11 @@ export const BackgroundPage = () => {
   const [userImage, setUserImage] = useState("button");
   const [selectedColorId, setSelectedColorId] = useState(0);
   const [selectedImageId, setSelectedImageId] = useState(null);
-  const [data, setData] = useState([]);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const color = ["beige", "purple", "blue", "green"];
   const image = [...backgroundAllImage];
-  const TestData = data.id;
 
   async function fetchImages() {
     try {
@@ -50,13 +51,13 @@ export const BackgroundPage = () => {
       ? image[selectedImageId]
       : defaultImage;
 
-    const test = await createRecipient(
-      recipientName,
-      selectedColor,
-      selectedImage
-    );
-
-    setData(test);
+    createRecipient(recipientName, selectedColor, selectedImage)
+      .then((responseData) => {
+        navigate(`/post/${responseData.id}`); // 성공적으로 메시지를 생성한 후에 경로 이동
+      })
+      .catch((error) => {
+        console.error("Message creation failed:", error);
+      });
   };
 
   return (
@@ -86,9 +87,7 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <Link to={`/post/${data.id}`}>
-          <CreateButton userName={recipientName} />
-        </Link>
+        <CreateButton userName={recipientName} />
       </form>
     </Layout>
   );
