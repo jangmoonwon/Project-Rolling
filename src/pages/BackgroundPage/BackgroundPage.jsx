@@ -3,10 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
-import { NameInput } from "sharing/NameInput/NameInput";
-import { Wallpaper } from "sharing/Wallpaper/Wallpaper";
-import { CreateButton } from "sharing/CreateButton/CreateButton";
-import { getBackgroundImages } from "util/api/getBackgroundImages";
+import { NameInput, Wallpaper, CreateButton } from "sharing";
+import { getBackgroundImages } from "util";
 
 const cx = classNames.bind(styles);
 
