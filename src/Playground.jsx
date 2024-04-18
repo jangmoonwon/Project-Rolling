@@ -27,7 +27,7 @@ const PlayGround = () => {
   const testGetRecipientById = async () => {
     try {
       // 테스트를 위한 임시 ID 사용
-      const recipientId = 5781;
+      const recipientId = 6110;
       const data = await getRecipientById(recipientId);
       console.log(data);
     } catch (error) {
@@ -61,7 +61,7 @@ const PlayGround = () => {
 
   const testCreateMessage = async () => {
     try {
-      const recipientId = 5786; // 메시지를 보낼 대상의 ID. 존재하는 대상의 ID로 변경해야 함
+      const recipientId = 6110; // 메시지를 보낼 대상의 ID. 존재하는 대상의 ID로 변경해야 함
       const data = await createMessage(
         recipientId,
         "보내는 사람",
@@ -78,7 +78,7 @@ const PlayGround = () => {
 
   const testGetMessages = async () => {
     try {
-      const recipientId = 5786; // 메시지를 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
+      const recipientId = 6110; // 메시지를 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
       const data = await getMessages(recipientId);
       console.log(data);
     } catch (error) {
@@ -98,7 +98,7 @@ const PlayGround = () => {
 
   const testAddReaction = async () => {
     try {
-      const recipientId = 5786; // 리액션을 추가할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
+      const recipientId = 6110; // 리액션을 추가할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
       const data = await addReaction(recipientId, "😊", "increase");
       console.log(data);
     } catch (error) {
@@ -108,7 +108,7 @@ const PlayGround = () => {
 
   const testGetReactions = async () => {
     try {
-      const recipientId = 5786; // 리액션을 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
+      const recipientId = 6110; // 리액션을 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
       const data = await getReactions(recipientId);
       console.log(data);
     } catch (error) {

@@ -3,6 +3,7 @@ export * from "./getRecipientById";
 export * from "./getMessages";
 export * from "./getReactions";
 export * from "./getBackgroundImages";
+export * from "./getProfileImages";
 export * from "./createRecipient";
 export * from "./createMessage";
 export * from "./deleteRecipient";

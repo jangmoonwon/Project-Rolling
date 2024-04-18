@@ -1,3 +1,8 @@
+/**
+ * 
+ * @returns 프로필 이미지 목록
+ */
+
 export async function getProfileImages() {
     const url = "https://rolling-api.vercel.app/profile-images/";
     try {
