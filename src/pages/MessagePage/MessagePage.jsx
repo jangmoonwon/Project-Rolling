@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
 import { getProfileImages } from "util/api/getProfileImages";
