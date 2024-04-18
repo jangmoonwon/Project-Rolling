@@ -13,6 +13,16 @@ const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {
   const [backgroundAllImage, setBackgroundAllImage] = useState([]);
+  const [recipientName, setRecipientName] = useState("");
+  const [userColor, setUserColor] = useState("clickButton");
+  const [userImage, setUserImage] = useState("button");
+  const [selectedColorId, setSelectedColorId] = useState(0);
+  const [selectedImageId, setSelectedImageId] = useState(null);
+  const [data, setData] = useState([]);
+
+  const color = ["beige", "purple", "blue", "green"];
+  const image = [...backgroundAllImage];
+  const TestData = data.id;
 
   async function fetchImages() {
     try {
@@ -27,15 +37,6 @@ export const BackgroundPage = () => {
     fetchImages();
   }, []);
 
-  const [recipientName, setRecipientName] = useState("");
-  const [userColor, setUserColor] = useState("clickButton");
-  const [userImage, setUserImage] = useState("button");
-  const [selectedColorId, setSelectedColorId] = useState(0);
-  const [selectedImageId, setSelectedImageId] = useState(null);
-
-  const color = ["beige", "purple", "blue", "green"];
-  const image = [...backgroundAllImage];
-
   const handleSubmit = async (event) => {
     // 새로고침 방지
     event.preventDefault();
@@ -49,8 +50,13 @@ export const BackgroundPage = () => {
       ? image[selectedImageId]
       : defaultImage;
 
-    const test = createRecipient(recipientName, selectedColor, selectedImage);
-    console.log(test);
+    const test = await createRecipient(
+      recipientName,
+      selectedColor,
+      selectedImage
+    );
+
+    setData(test);
   };
 
   return (
@@ -80,7 +86,9 @@ export const BackgroundPage = () => {
           image={image}
         />
 
-        <CreateButton userName={recipientName} />
+        <Link to={`/post/${data.id}`}>
+          <CreateButton userName={recipientName} />
+        </Link>
       </form>
     </Layout>
   );

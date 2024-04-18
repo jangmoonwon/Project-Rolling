@@ -27,11 +27,6 @@ export async function createRecipient(
     }
   );
 
-  if (response.ok) {
-    console.log("Success Status code:", response.status);
-    // return response.status;
-  }
-
   if (!response.ok) {
     throw new Error("Error creating recipient");
   }
