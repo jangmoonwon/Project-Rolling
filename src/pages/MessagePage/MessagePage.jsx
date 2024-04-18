@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./MessagePage.module.scss";
 import classNames from "classnames/bind";
-import { getProfileImages } from "util/api/getProfileImages";
+import { getProfileImages } from "util";
 import { useParams, useNavigate } from "react-router-dom";
 import { Layout } from "layout/Layout";
 import {
