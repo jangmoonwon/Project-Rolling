@@ -17,5 +17,7 @@ export async function getMessages(recipientId, limit, offset) {
 	if (!response.ok) {
 	  throw new Error("Error fetching messages");
 	}
-	return await response.json();
+	const data = await response.json()
+
+    return data.results;
   }

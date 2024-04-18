@@ -44,7 +44,6 @@ export const MessagePage = () => {
   const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
   const handleSubmit = (event) => {
-    // 새로고침 방지
     event.preventDefault();
   };
 

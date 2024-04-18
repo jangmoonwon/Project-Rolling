@@ -16,5 +16,7 @@ export async function getRecipients(limit, offset, sort) {
   if (!response.ok) {
     throw new Error("Error fetching recipients");
   }
-  return await response.json();
+  const data = await response.json()
+
+  return data.results;
 }
