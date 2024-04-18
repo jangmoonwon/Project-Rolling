@@ -1,3 +1,11 @@
+/**
+ * 
+ * @param {*} name: 이름
+ * @param {*} backgroundColor: 색
+ * @param {*} backgroundImageURL: 이미지 경로 
+ * @returns: 생성된 Recipient객체 정보
+ */
+
 export async function createRecipient(
   name,
   backgroundColor,
