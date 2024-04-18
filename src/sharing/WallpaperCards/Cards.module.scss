@@ -1,8 +1,8 @@
 @import "src/styles/global.scss";
 
 .container {
-  display: inline-flex;
-  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -21,8 +21,8 @@
 }
 
 .colorButton {
-  width: 10.5rem;
-  height: 10.5rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
@@ -44,8 +44,8 @@
 }
 
 .image {
-  width: 10.5rem;
-  height: 10.5rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   object-fit: cover;
