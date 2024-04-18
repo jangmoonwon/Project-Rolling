@@ -1,8 +1,44 @@
 @import "/src/styles/global.scss";
 
+.background {
+  display: flex;
+  padding: 9.375rem 16rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .button-box {
   display: flex;
   height: 28rem;
   justify-content: center;
   align-items: center;
+}
+
+.content {
+  width: 38.4rem;
+  height: 28rem;
+  padding: 3.5rem 3rem;
+  background-color: $color-white;
+  border-radius: 1.6rem;
+  box-shadow: 0 0.2rem 1.2rem 0 rgba(0, 0, 0, 0.08);
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.beige {
+  background-color: $color-orange200;
+}
+
+.purple {
+  background-color: $color-purple200;
+}
+
+.blue {
+  background-color: $color-blue200;
+}
+
+.green {
+  background-color: $color-green200;
 }
