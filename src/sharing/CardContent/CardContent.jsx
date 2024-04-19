@@ -34,7 +34,7 @@ export const CardContent = ({ content, font }) => {
     <div className={cx("bottom")}>
       <div className={cx(style())}>{content}</div>
       <div
-        className={cx(style())}
+        // className={cx(style())}
         dangerouslySetInnerHTML={{ __html: content }}
       ></div>
     </div>

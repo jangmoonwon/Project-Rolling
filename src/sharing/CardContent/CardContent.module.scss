@@ -9,20 +9,24 @@
 }
 
 .notoSans {
-  // 조건에따라 폰트 구별하기
   @include font-regular(1.5rem, $color-black, "Noto Sans");
 }
 
 .pretendard {
-  // 조건에따라 폰트 구별하기
   @include font-regular(1.5rem, $color-black, "Pretendard");
 }
 .nanumMyeongjo {
-  // 조건에따라 폰트 구별하기
   @include font-regular(1.5rem, $color-black, "Nanum Myeongjo");
 }
 
 .nanumpenscript {
-  // 조건에따라 폰트 구별하기
   @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
 }
+
+// p {
+//   @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
+// }
+
+// strong {
+//   @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
+// }
