@@ -3,4 +3,5 @@ export * from "./HomePage";
 export * from "./ListPage";
 export * from "./MessagePage";
 export * from "./PostPage";
-export * from "./ListPage"
+export * from "./ListPage";
+export * from "./EditPage";

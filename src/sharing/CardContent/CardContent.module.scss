@@ -7,26 +7,3 @@
   flex-direction: column;
   padding-top: 1.5rem;
 }
-
-.notoSans {
-  @include font-regular(1.5rem, $color-black, "Noto Sans");
-}
-
-.pretendard {
-  @include font-regular(1.5rem, $color-black, "Pretendard");
-}
-.nanumMyeongjo {
-  @include font-regular(1.5rem, $color-black, "Nanum Myeongjo");
-}
-
-.nanumpenscript {
-  @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
-}
-
-// p {
-//   @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
-// }
-
-// strong {
-//   @include font-regular(1.5rem, $color-black, "Nanum Pen Script");
-// }

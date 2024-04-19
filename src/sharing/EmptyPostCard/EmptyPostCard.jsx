@@ -5,7 +5,6 @@ import { PostCardLayout, CardProfile, CardContent, CardDate } from "sharing";
 
 const cx = classNames.bind(styles);
 
-// 테스트한 backgroundImage, backgroundColor삭제하기
 export const EmptyPostCard = ({
   data,
   backgroundImage,
