@@ -1,1 +1,1 @@
-export * from "./BackgroundPage"
+export * from "./BackgroundPage";

@@ -1,1 +1,1 @@
-export * from "./PostCardLayout"
+export * from "./PostCardLayout";

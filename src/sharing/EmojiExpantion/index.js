@@ -1,1 +1,1 @@
-export * from "./EmojiExpantion"
+export * from "./EmojiExpantion";

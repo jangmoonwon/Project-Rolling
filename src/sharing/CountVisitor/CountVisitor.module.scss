@@ -1,12 +1,8 @@
 @import "src/styles/global.scss";
 
 .container {
-  @include font-regular(1.8rem);
   display: flex;
   align-items: center;
-  p {
-    font-weight: 700;
-  }
 }
 
 .profile-count {
@@ -18,9 +14,11 @@
 
   .images {
     border: 0.2rem solid white;
+    min-width: 2.8rem;
     position: absolute;
     height: 2.8rem;
     border-radius: 3.33rem;
+    background-color: white;
   }
 
   img {
@@ -45,12 +43,15 @@
 }
 
 .images:nth-child(4) {
-  width: 2.8rem;
-  padding-top: 0.5rem;
+  color: black;
+  padding: 0.6rem;
   text-align: center;
   font-size: 1.2rem;
   z-index: 3;
   left: 4.5rem;
   background-color: white;
   border: 0.1rem solid #e3e3e3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

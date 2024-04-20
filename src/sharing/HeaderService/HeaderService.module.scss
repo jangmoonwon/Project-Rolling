@@ -23,6 +23,11 @@
 .post-info {
   display: flex;
   align-items: center;
+  @include font-regular(1.8rem, $color-gray900);
+
+  .message-count {
+    font-weight: 700;
+  }
 }
 
 .partition28px {

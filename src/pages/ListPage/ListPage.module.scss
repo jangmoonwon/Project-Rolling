@@ -1,0 +1,35 @@
+@import "src/styles/global.scss";
+
+.container {
+  margin: 0 auto;
+  width: 116rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.rolling-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.title {
+  @include font-bold(2.4rem);
+}
+
+.link-button {
+  display: block;
+  padding-top: 2.4rem;
+}
+
+.link-button-style {
+  @include font-regular(1.8rem, white);
+  width: 28rem;
+  padding: 1.4rem 2.4rem;
+  background-color: $color-purple600;
+  border-radius: 1.2rem;
+  text-align: center;
+  margin: 0 auto;
+}

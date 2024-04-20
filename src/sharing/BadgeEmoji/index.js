@@ -1,1 +1,1 @@
-export * from "./BadgeEmoji"
+export * from "./BadgeEmoji";

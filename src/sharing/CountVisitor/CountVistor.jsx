@@ -7,16 +7,17 @@ export function CountVisitor({ recentMessages, messageCount }) {
   return (
     <div className={cx("container")}>
       <div className={cx("profile-count")}>
-        {recentMessages.map((item, i) => {
+        {recentMessages.map((rec, i) => {
           return (
             <div key={i} className={cx("images")}>
-              <img src={item.profileImageURL} alt="프로필이미지" />
+              <img src={rec.profileImageURL} alt="pr" />
             </div>
           );
         })}
-        <div className={cx("images")}>+{messageCount - 3}</div>
+        {messageCount > 3 && (
+          <div className={cx("images")}>+{messageCount - 3}</div>
+        )}
       </div>
-      <p>{messageCount}</p>명이 작성했어요!
     </div>
   );
 }
