@@ -2,7 +2,8 @@
 
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(38.4rem, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
   gap: 1.5rem;
 }
 
@@ -29,7 +30,9 @@
 
 .background {
   position: relative;
-  padding: 9rem 16.8rem;
+  padding: 9rem 16.4rem;
+  background-size: cover;
+  padding-bottom: min(34rem);
 }
 
 .beige {

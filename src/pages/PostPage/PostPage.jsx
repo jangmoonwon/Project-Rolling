@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react";
 import { Layout } from "layout/Layout";
 import { HeaderService, EmptyPostCard } from "sharing";
+import { useParams } from "react-router-dom";
+import { getRecipientById } from "util";
 
 const recentMessagesTest = [
   {
@@ -100,6 +103,22 @@ const nameByIdTest = "hihi";
 const messageCountTest = reactionsTest.length;
 
 export const PostPage = () => {
+  const { id } = useParams();
+
+  const [backgroundColor, setBackgroundColor] = useState([]);
+  const [backgroundImageURL, setBackgroundImageURL] = useState([]);
+
+  useEffect(() => {
+    const fetchRecipientId = async () => {
+      const { backgroundColor, backgroundImageURL } = await getRecipientById(
+        id
+      );
+      setBackgroundColor(backgroundColor);
+      setBackgroundImageURL(backgroundImageURL);
+    };
+    fetchRecipientId();
+  }, []);
+
   return (
     <Layout isHiddenButton={true}>
       <HeaderService
@@ -109,7 +128,11 @@ export const PostPage = () => {
         topReactions={topReactionsTest}
         reactions={reactionsTest}
       />
-      <EmptyPostCard recentMessages={recentMessagesTest} />
+      <EmptyPostCard
+        recentMessages={recentMessagesTest}
+        color={backgroundColor}
+        image={backgroundImageURL}
+      />
     </Layout>
   );
 };

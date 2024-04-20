@@ -11,9 +11,14 @@ import {
 
 const cx = classNames.bind(styles);
 
-export const EmptyPostCard = ({ recentMessages, edit }) => {
+export const EmptyPostCard = ({ recentMessages, edit, color, image }) => {
+  console.log(recentMessages);
+
   return (
-    <div className={cx("background")}>
+    <div
+      style={image && { backgroundImage: `url(${image})` }}
+      className={cx("background", color && color)}
+    >
       {edit && <DeleteButton />}
 
       <div className={cx("content")}>

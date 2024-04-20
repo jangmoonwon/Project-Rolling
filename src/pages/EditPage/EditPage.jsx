@@ -115,6 +115,8 @@ export const EditPage = () => {
         <EmptyPostCard
           recentMessages={recentMessagesTest}
           edit={DELETED_ICON}
+          backgroundColor={"beige"}
+          backgroundImage={"https://picsum.photos/id/683/3840/2160"}
         />
       </Layout>
     </div>
