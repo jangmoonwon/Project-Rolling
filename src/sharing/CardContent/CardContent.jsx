@@ -33,7 +33,8 @@ export const CardContent = ({ content, font }) => {
 
   return (
     <div className={cx("bottom")}>
-      <div
+      <p
+        className={cx("text")}
         style={{
           fontFamily: style(),
           fontSize: "1.5rem",
@@ -41,7 +42,7 @@ export const CardContent = ({ content, font }) => {
         }}
       >
         {parse(content)}
-      </div>
+      </p>
     </div>
   );
 };

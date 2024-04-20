@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .Header-service {
