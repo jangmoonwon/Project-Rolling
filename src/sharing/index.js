@@ -1,6 +1,7 @@
 export * from "./BadgeEmoji";
 export * from "./CountVisitor";
 export * from "./CreateButton";
+export * from "./DeleteButton";
 export * from "./DropdownMenuBar";
 export * from "./EmojiExpantion";
 export * from "./EmptyPostCard";

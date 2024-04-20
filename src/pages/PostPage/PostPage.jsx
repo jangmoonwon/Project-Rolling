@@ -110,7 +110,7 @@ export const PostPage = () => {
         topReactions={topReactionsTest}
         reactions={reactionsTest}
       />
-      <EmptyPostCard data={recentMessagesTest} />
+      <EmptyPostCard recentMessages={recentMessagesTest} />
     </Layout>
   );
 };

@@ -112,7 +112,10 @@ export const EditPage = () => {
           topReactions={topReactionsTest}
           reactions={reactionsTest}
         />
-        <EmptyPostCard data={recentMessagesTest} edit={DELETED_ICON} />
+        <EmptyPostCard
+          recentMessages={recentMessagesTest}
+          edit={DELETED_ICON}
+        />
       </Layout>
     </div>
   );
