@@ -1,6 +1,12 @@
 import "styles/reset.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage, MessagePage, BackgroundPage, ListPage } from "./pages";
+import {
+  HomePage,
+  MessagePage,
+  BackgroundPage,
+  ListPage,
+  EditPage,
+} from "./pages";
 import PlayGround from "./Playground";
 
 import { PostPage } from "./pages/PostPage/PostPage";
@@ -15,6 +21,7 @@ function App() {
           <Route index element={<BackgroundPage />} />
           <Route path=":id" element={<PostPage />} />
           <Route path=":id/message" element={<MessagePage />} />
+          <Route path=":id/edit" element={<EditPage />} />
         </Route>
 
         <Route path="*" element={<PlayGround />} />

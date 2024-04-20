@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ShareButton.module.scss";
 import classNames from "classnames/bind";
+import { useKakaoSdk } from "util/useKakaoSdk";
 
 const cx = classNames.bind(styles);
 
@@ -22,6 +23,12 @@ export function ShareButton() {
     }, 5000);
   };
 
+  const { shareKakao } = useKakaoSdk();
+
+  const handleKakaoClick = () => {
+    shareKakao();
+  };
+
   return (
     <div className={cx("container")}>
       <div className={cx("share-icon-button")} onClick={toggleDropdown}>
@@ -29,7 +36,9 @@ export function ShareButton() {
       </div>
       {isOpen && (
         <div className={cx("share-button-container")}>
-          <div className={cx("share-button")}>카카오톡 공유</div>
+          <div className={cx("share-button")} onClick={handleKakaoClick}>
+            카카오톡 공유
+          </div>
           <div className={cx("share-button")} onClick={copyUrlToClipBoard}>
             URL 공유
           </div>

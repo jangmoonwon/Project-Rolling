@@ -102,7 +102,7 @@ const messageCountTest = 23;
 
 export const PostPage = () => {
   return (
-    <Layout isHiddenButton={true}>
+    <Layout isHiddenButton={true} edit={true}>
       <HeaderService
         name={nameByIdTest}
         recentMessages={recentMessagesTest}

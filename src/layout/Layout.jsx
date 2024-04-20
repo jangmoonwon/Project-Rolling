@@ -1,9 +1,9 @@
 import { NavBar } from "NavBar";
 
-export const Layout = ({ children, isHiddenButton = false }) => {
+export const Layout = ({ children, isHiddenButton = false, edit = false }) => {
   return (
     <div>
-      <NavBar isHiddenButton={isHiddenButton} />
+      <NavBar isHiddenButton={isHiddenButton} edit={edit} />
       <main>{children}</main>
     </div>
   );
