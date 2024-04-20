@@ -1,0 +1,15 @@
+@import "src/styles/global.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.title {
+  @include font-bold(2rem, $color-gray900, "Pretendard");
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.25rem;
+  letter-spacing: -0.015rem;
+}
