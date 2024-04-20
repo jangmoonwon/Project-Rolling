@@ -1,5 +1,8 @@
+import React, { useState, useEffect } from "react";
 import { Layout } from "layout/Layout";
 import { HeaderService, EmptyPostCard } from "sharing";
+import { useParams } from "react-router-dom";
+import { getRecipientById, getMessages } from "util";
 import { DELETED_ICON } from "./constant";
 
 const recentMessagesTest = [
@@ -102,6 +105,30 @@ const nameByIdTest = "hihi";
 const messageCountTest = 23;
 
 export const EditPage = () => {
+  const { id } = useParams();
+
+  const [backgroundColor, setBackgroundColor] = useState([]);
+  const [backgroundImageURL, setBackgroundImageURL] = useState([]);
+  const [recentMessages, setRecentMessages] = useState([]);
+
+  useEffect(() => {
+    const fetchRecipientId = async () => {
+      const data = await getRecipientById(id);
+      setBackgroundColor(data.backgroundColor);
+      setBackgroundImageURL(data.backgroundImageURL);
+    };
+    fetchRecipientId();
+  }, []);
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const data = await getMessages(id);
+      setRecentMessages(data);
+      console.log(recentMessages);
+    };
+    fetchMessages();
+  }, []);
+
   return (
     <div>
       <Layout isHiddenButton={true}>
@@ -113,10 +140,11 @@ export const EditPage = () => {
           reactions={reactionsTest}
         />
         <EmptyPostCard
-          recentMessages={recentMessagesTest}
+          id={id}
+          recentMessages={recentMessages}
           edit={DELETED_ICON}
-          backgroundColor={"beige"}
-          backgroundImage={"https://picsum.photos/id/683/3840/2160"}
+          color={backgroundColor}
+          image={backgroundImageURL}
         />
       </Layout>
     </div>

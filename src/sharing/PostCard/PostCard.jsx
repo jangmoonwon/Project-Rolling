@@ -1,6 +1,6 @@
-import styles from "./EmptyPostCard.module.scss";
+import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   PostCardLayout,
   CardProfile,
@@ -11,8 +11,12 @@ import {
 
 const cx = classNames.bind(styles);
 
-export const EmptyPostCard = ({ recentMessages, edit, color, image }) => {
-  console.log(recentMessages);
+export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
+  const navigate = useNavigate();
+
+  const testClick = () => {
+    navigate(`/post/${id}/message`);
+  };
 
   return (
     <div
@@ -20,15 +24,12 @@ export const EmptyPostCard = ({ recentMessages, edit, color, image }) => {
       className={cx("background", color && color)}
     >
       {edit && <DeleteButton />}
-
       <div className={cx("content")}>
         {!edit && (
           <PostCardLayout>
             <div className={cx("button-box")}>
-              <button>
-                <Link to="/post/{id}/message">
-                  <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
-                </Link>
+              <button onClick={testClick}>
+                <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
               </button>
             </div>
           </PostCardLayout>

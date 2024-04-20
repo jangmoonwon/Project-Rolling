@@ -22,7 +22,11 @@ export const DropdownMenuBar = ({ value, setValue, data, text }) => {
     <div className={cx("container")}>
       <h2 className={cx("title")}>{text}</h2>
 
-      <button className={cx("dropdownBlock")} onClick={toggleDropdown}>
+      <button
+        type="button"
+        className={cx("dropdownBlock")}
+        onClick={toggleDropdown}
+      >
         <ul>{value}</ul>
         <img src={isOpen ? ARROW_UP : ARROW_DOWN} alt="화살표 이미지" />
       </button>

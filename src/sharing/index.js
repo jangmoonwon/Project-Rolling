@@ -4,7 +4,7 @@ export * from "./CreateButton";
 export * from "./DeleteButton";
 export * from "./DropdownMenuBar";
 export * from "./EmojiExpantion";
-export * from "./EmptyPostCard";
+export * from "./PostCard";
 export * from "./HeaderService";
 export * from "./Modal";
 export * from "./NameInput";

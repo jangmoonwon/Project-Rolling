@@ -45,6 +45,7 @@ export const MessagePage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(id);
 
     createMessage(id, senderName, relationship, content, font, profileImage)
       .then(() => {
@@ -81,6 +82,7 @@ export const MessagePage = () => {
 
         <div className={cx("marginTop")}>
           <DropdownMenuBar
+            id={id}
             value={font}
             setValue={setFont}
             data={fonts}
