@@ -17,15 +17,17 @@ export const EmptyPostCard = ({ recentMessages, edit }) => {
       {edit && <DeleteButton />}
 
       <div className={cx("content")}>
-        <PostCardLayout>
-          <div className={cx("button-box")}>
-            <button>
-              <Link to="/post/{id}/message">
-                <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
-              </Link>
-            </button>
-          </div>
-        </PostCardLayout>
+        {!edit && (
+          <PostCardLayout>
+            <div className={cx("button-box")}>
+              <button>
+                <Link to="/post/{id}/message">
+                  <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
+                </Link>
+              </button>
+            </div>
+          </PostCardLayout>
+        )}
 
         {recentMessages.map((item, i) => {
           return (
