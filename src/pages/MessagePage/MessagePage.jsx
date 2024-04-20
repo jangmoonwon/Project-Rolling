@@ -17,6 +17,17 @@ const cx = classNames.bind(styles);
 
 export const MessagePage = () => {
   const [profileAllImage, setprofileAllImage] = useState([]);
+  const [senderName, setSenderName] = useState("");
+  const [profileImage, setProfileImage] = useState("");
+  const [relationship, setRelationship] = useState("지인");
+  const [content, setContent] = useState("");
+  const [font, setFont] = useState("Noto Sans");
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const profileImages = [...profileAllImage];
+  const relationships = ["친구", "지인", "동료", "가족"];
+  const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
   async function fetchImages() {
     try {
@@ -31,18 +42,6 @@ export const MessagePage = () => {
   useEffect(() => {
     fetchImages();
   }, []);
-
-  const [senderName, setSenderName] = useState("");
-  const [profileImage, setProfileImage] = useState("");
-  const [relationship, setRelationship] = useState("지인");
-  const [content, setContent] = useState("");
-  const [font, setFont] = useState("Noto Sans");
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const profileImages = [...profileAllImage];
-  const relationships = ["친구", "지인", "동료", "가족"];
-  const fonts = ["Noto Sans", "Pretendard", "나눔명조", "나눔손글씨 손편지체"];
 
   const handleSubmit = (event) => {
     event.preventDefault();

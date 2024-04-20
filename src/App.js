@@ -23,7 +23,6 @@ function App() {
           <Route path=":id/message" element={<MessagePage />} />
           <Route path=":id/edit" element={<EditPage />} />
         </Route>
-
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>

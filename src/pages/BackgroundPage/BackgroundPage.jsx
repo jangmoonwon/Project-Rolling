@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
-import { useParams } from "react-router-dom";
-import { createRecipient } from "util";
 import { NameInput, Wallpaper, CreateButton } from "sharing";
-import { getBackgroundImages } from "util";
+import { getBackgroundImages, createRecipient } from "util";
 
 const cx = classNames.bind(styles);
 

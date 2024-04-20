@@ -1,1 +1,1 @@
-export * from "./DropdownMenuBar"
+export * from "./DropdownMenuBar";
