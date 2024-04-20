@@ -1,1 +1,1 @@
-export * from "./EmptyPostCard"
+export * from "./EmptyPostCard";

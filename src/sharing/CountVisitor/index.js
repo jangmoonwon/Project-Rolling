@@ -1,1 +1,1 @@
-export * from "./CountVistor"
+export * from "./CountVistor";
