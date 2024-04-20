@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
 
-  const testClick = () => {
+  const handlemessage = () => {
     navigate(`/post/${id}/message`);
   };
 
@@ -23,12 +23,12 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
       style={image && { backgroundImage: `url(${image})` }}
       className={cx("background", color && color)}
     >
-      {edit && <DeleteButton />}
+      {edit && <DeleteButton id={id} />}
       <div className={cx("content")}>
         {!edit && (
           <PostCardLayout>
             <div className={cx("button-box")}>
-              <button onClick={testClick}>
+              <button onClick={handlemessage}>
                 <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
               </button>
             </div>
@@ -38,7 +38,14 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
         {recentMessages.map((item, i) => {
           return (
             <button key={i} className={cx("cardList")}>
-              {edit && <DeleteButton image={edit} />}
+              {edit && (
+                <DeleteButton
+                  index={i}
+                  id={id}
+                  messages={recentMessages}
+                  image={edit}
+                />
+              )}
 
               <CardProfile
                 image={item.profileImageURL}

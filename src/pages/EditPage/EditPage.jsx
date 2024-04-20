@@ -113,21 +113,28 @@ export const EditPage = () => {
 
   useEffect(() => {
     const fetchRecipientId = async () => {
-      const data = await getRecipientById(id);
-      setBackgroundColor(data.backgroundColor);
-      setBackgroundImageURL(data.backgroundImageURL);
+      try {
+        const data = await getRecipientById(id);
+        setBackgroundColor(data.backgroundColor);
+        setBackgroundImageURL(data.backgroundImageURL);
+      } catch (error) {
+        console.error("Message creation failed:", error);
+      }
     };
     fetchRecipientId();
   }, []);
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const data = await getMessages(id);
-      setRecentMessages(data);
-      console.log(recentMessages);
+      try {
+        const data = await getMessages(id);
+        setRecentMessages(data);
+      } catch (error) {
+        console.error("Message creation failed:", error);
+      }
     };
     fetchMessages();
-  }, []);
+  }, [recentMessages]);
 
   return (
     <div>
