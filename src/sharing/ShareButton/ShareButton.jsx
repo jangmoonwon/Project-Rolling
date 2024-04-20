@@ -25,7 +25,7 @@ export function ShareButton() {
   return (
     <div className={cx("container")}>
       <div className={cx("share-icon-button")} onClick={toggleDropdown}>
-        <img src="../images/shareIcon.svg" alt="url 공유 버튼" />
+        <img src="/images/shareIcon.svg" alt="url 공유 버튼" />
       </div>
       {isOpen && (
         <div className={cx("share-button-container")}>
