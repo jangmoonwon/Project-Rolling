@@ -24,15 +24,14 @@ const recentMessagesTest = [
     createdAt: "2024-03-08T05:29:37.613149Z",
   },
   {
-    id: 9872,
-    recipientId: 5626,
-    sender: "테스트에요~",
-    profileImageURL: "https://picsum.photos/id/547/100/100",
+    id: 7743,
+    recipientId: 4814,
+    sender: "코드잇",
+    profileImageURL: "https://picsum.photos/id/571/100/100",
     relationship: "가족",
-    content:
-      '<p><strong>그대들은 어떻게 살것인가 - 미야자키하야오 <span class="ql-cursor">�</span></strong></p>',
-    font: "나눔손글씨 손편지체",
-    createdAt: "2024-03-12T01:27:38.099811Z",
+    content: "<p>안녕하세요</p>",
+    font: "나눔명조",
+    createdAt: "2024-03-08T05:29:37.613149Z",
   },
 ];
 
@@ -98,7 +97,7 @@ const reactionsTest = [
 ];
 
 const nameByIdTest = "hihi";
-const messageCountTest = 23;
+const messageCountTest = reactionsTest.length;
 
 export const PostPage = () => {
   return (

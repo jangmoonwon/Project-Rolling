@@ -16,7 +16,6 @@ function App() {
           <Route path=":id" element={<PostPage />} />
           <Route path=":id/message" element={<MessagePage />} />
         </Route>
-
         <Route path="*" element={<PlayGround />} />
       </Routes>
     </BrowserRouter>
