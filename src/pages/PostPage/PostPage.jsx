@@ -116,6 +116,7 @@ export const PostPage = () => {
       setBackgroundImageURL(data.backgroundImageURL);
     };
     fetchRecipientId();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -124,6 +125,7 @@ export const PostPage = () => {
       setRecentMessages(data);
     };
     fetchMessages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

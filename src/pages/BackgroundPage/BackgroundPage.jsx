@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./BackgroundPage.module.scss";
 import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
@@ -15,7 +15,6 @@ export const BackgroundPage = () => {
   const [userImage, setUserImage] = useState("button");
   const [selectedColorId, setSelectedColorId] = useState(0);
   const [selectedImageId, setSelectedImageId] = useState(null);
-  const { id } = useParams();
   const navigate = useNavigate();
 
   const color = ["beige", "purple", "blue", "green"];

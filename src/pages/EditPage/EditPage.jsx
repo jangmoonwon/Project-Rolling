@@ -122,6 +122,7 @@ export const EditPage = () => {
       }
     };
     fetchRecipientId();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -134,7 +135,7 @@ export const EditPage = () => {
       }
     };
     fetchMessages();
-  }, [recentMessages]);
+  }, [id, recentMessages]);
 
   return (
     <div>
