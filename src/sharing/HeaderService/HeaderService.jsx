@@ -18,7 +18,6 @@ export function HeaderService({
   reactions,
   id,
 }) {
-  const length = reactions.length;
   const [newReactions, setNewReactions] = useState(reactions);
 
   return (
@@ -32,8 +31,8 @@ export function HeaderService({
           />
           <p className={cx("message-count")}>{messageCount}</p>명이 작성했어요!
           <div className={cx("partition28px")}></div>
-          {length !== 0 && <SortedEmojis topReactions={newReactions} />}
-          {length !== 0 && <EmojiExpantion reactions={newReactions} />}
+          <SortedEmojis topReactions={newReactions} />
+          <EmojiExpantion reactions={newReactions} />
           <ReactionPopoverButton
             id={id}
             setReactions={setNewReactions}

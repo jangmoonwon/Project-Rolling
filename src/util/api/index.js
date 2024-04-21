@@ -9,3 +9,4 @@ export * from "./createMessage";
 export * from "./deleteRecipient";
 export * from "./deleteMessage";
 export * from "./addReaction";
+export * from "./useKakaoSdk";
