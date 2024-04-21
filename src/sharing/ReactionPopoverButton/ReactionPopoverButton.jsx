@@ -2,20 +2,25 @@ import { useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import styles from "./ReactionPopoverButton.module.scss";
 import classNames from "classnames/bind";
+import { addReaction, getReactions } from "util";
 
 const cx = classNames.bind(styles);
 
-export function ReactionPopoverButton() {
+export function ReactionPopoverButton({ id, setReactions, newReactions }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedEmoji, setselectedEmoji] = useState();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const getPickedEmoji = (emojiObject) => {
-    setselectedEmoji(emojiObject.emoji);
-    console.log(selectedEmoji);
+  const getPickedEmoji = async (emojiObject) => {
+    await addReaction(id, emojiObject.emoji, "increase");
+    await setReactionsdata();
+  };
+
+  const setReactionsdata = async () => {
+    const reactions = await getReactions(id, 8);
+    setReactions(reactions);
   };
 
   return (

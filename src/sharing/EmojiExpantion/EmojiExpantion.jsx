@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BadgeEmoji } from "sharing/BadgeEmoji/BadgeEmoji";
+import { BadgeEmoji } from "sharing";
 import styles from "./EmojiExpantion.module.scss";
 import classNames from "classnames/bind";
 
@@ -20,7 +20,7 @@ export function EmojiExpantion({ reactions }) {
       {isOpen && (
         <div className={cx("grid-container")}>
           <div className={cx("grid-style")}>
-            {reactions.slice(0, 8).map((item, i) => (
+            {reactions.map((item, i) => (
               <BadgeEmoji key={i} emoji={item.emoji} count={item.count} />
             ))}
           </div>
