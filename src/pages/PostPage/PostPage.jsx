@@ -1,13 +1,10 @@
+import React, { useState, useEffect } from "react";
 import { Layout } from "layout/Layout";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { HeaderService, EmptyPostCard } from "sharing";
-import { getReactions, getRecipientById } from "util";
+import { useParams } from "react-router-dom";
+import { getRecipientById, getMessages, getReactions } from "util";
 
 export const PostPage = () => {
-  const [recipient, setRecipient] = useState(null);
-  const [reactions, setReactions] = useState(null);
-
   const { id } = useParams();
 
   const setdata = async () => {
@@ -17,8 +14,34 @@ export const PostPage = () => {
     setReactions(reactions);
   };
 
+  const [backgroundColor, setBackgroundColor] = useState([]);
+  const [backgroundImageURL, setBackgroundImageURL] = useState([]);
+  const [recentMessages, setRecentMessages] = useState([]);
+  const [recipient, setRecipient] = useState(null);
+  const [reactions, setReactions] = useState(null);
+
+  useEffect(() => {
+    const fetchRecipientId = async () => {
+      const data = await getRecipientById(id);
+      setBackgroundColor(data.backgroundColor);
+      setBackgroundImageURL(data.backgroundImageURL);
+    };
+    fetchRecipientId();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const data = await getMessages(id);
+      setRecentMessages(data);
+    };
+    fetchMessages();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     setdata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
@@ -31,7 +54,12 @@ export const PostPage = () => {
           reactions={reactions}
           id={id}
         />
-        <EmptyPostCard />
+        <EmptyPostCard
+          id={id}
+          recentMessages={recentMessages}
+          color={backgroundColor}
+          image={backgroundImageURL}
+        />
       </Layout>
     )
   );

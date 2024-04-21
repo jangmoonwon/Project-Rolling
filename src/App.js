@@ -6,10 +6,9 @@ import {
   BackgroundPage,
   ListPage,
   EditPage,
+  PostPage,
 } from "./pages";
 import PlayGround from "./Playground";
-
-import { PostPage } from "./pages/PostPage/PostPage";
 
 function App() {
   return (
