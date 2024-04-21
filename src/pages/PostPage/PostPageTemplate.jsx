@@ -1,6 +1,6 @@
 import { Layout } from "layout/Layout";
 import { HeaderService } from "../../sharing/HeaderService/HeaderService";
-import { EmptyPostCard } from "sharing/EmptyPostCard/EmptyPostCard";
+import { EmptyPostCard } from "sharing/PostCard/PostCard";
 
 import { getMessages, getReactions, getRecipientById } from "util";
 import { useParams } from "react-router-dom";
