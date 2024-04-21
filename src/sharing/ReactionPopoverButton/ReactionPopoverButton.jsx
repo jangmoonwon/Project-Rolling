@@ -26,7 +26,7 @@ export function ReactionPopoverButton({ id, setReactions, newReactions }) {
   return (
     <div className={cx("container")}>
       <div className={cx("popover-button")} onClick={toggleDropdown}>
-        <img src="../images/addEmojiIcon.svg" alt="화살표 이미지" />
+        <img src={ADDEMOJI_ICON} alt="화살표 이미지" />
         <p>추가</p>
       </div>
       {isOpen && (

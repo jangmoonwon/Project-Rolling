@@ -1,5 +1,5 @@
 /**
- * 
+ *
  * @param {*} recipientId 가져올 Recipient의 id값, 해당 Recipient를 가져옴 -> 아마 이거 그 경로에 넣어주거나 경로에서 Recipeint정보 불러올 시 사용
  * @returns Recipient정보
  */

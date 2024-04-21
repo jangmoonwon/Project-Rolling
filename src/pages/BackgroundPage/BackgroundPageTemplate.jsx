@@ -4,7 +4,7 @@ import classNames from "classnames/bind";
 import { Layout } from "layout/Layout";
 import { NameInput, Wallpaper, CreateButton } from "sharing";
 import { IMAGE_TEST1, IMAGE_TEST2, IMAGE_TEST3, IMAGE_TEST4 } from "./constant";
-import { createRecipient } from "util";
+// import { createRecipient } from "util";
 const cx = classNames.bind(styles);
 
 export const BackgroundPage = () => {

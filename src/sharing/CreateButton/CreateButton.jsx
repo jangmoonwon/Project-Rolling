@@ -6,7 +6,6 @@ const cx = classNames.bind(styles);
 
 /** 생성하기 버튼 */
 export const CreateButton = ({ userName, content }) => {
-  // 중복 해결 필요
   function UserButton() {
     if (content === undefined) {
       if (userName.length === 0) {
