@@ -101,7 +101,7 @@ const messageCountTest = reactionsTest.length;
 
 export const PostPage = () => {
   return (
-    <Layout isHiddenButton={true}>
+    <Layout isHiddenButton={true} edit={true}>
       <HeaderService
         name={nameByIdTest}
         recentMessages={recentMessagesTest}
