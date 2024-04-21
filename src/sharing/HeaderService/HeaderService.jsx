@@ -18,7 +18,6 @@ export function HeaderService({
   reactions,
   id,
 }) {
-  const length = reactions.length;
   const [newReactions, setNewReactions] = useState(reactions);
 
   return (
