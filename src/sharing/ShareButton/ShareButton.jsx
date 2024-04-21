@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ShareButton.module.scss";
 import classNames from "classnames/bind";
 import { SHARE_ICON, COMPLETED_ICON, CLOSE_ICON } from "./constant";
+import { useKakaoSdk } from "util";
 
 const cx = classNames.bind(styles);
 
