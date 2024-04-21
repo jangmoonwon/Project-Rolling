@@ -1,148 +1,38 @@
-import React, { useState, useEffect } from "react";
 import { Layout } from "layout/Layout";
-import { HeaderService, EmptyPostCard } from "sharing";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getRecipientById, getMessages } from "util";
-
-const recentMessagesTest = [
-  {
-    id: 10157,
-    recipientId: 5693,
-    sender: "닼닼 모드",
-    profileImageURL: "https://picsum.photos/id/859/100/100",
-    relationship: "동료",
-    content:
-      "<p>다크 모드 너무너무 예쁘네요 :) !!</p><p>모달 바깥 부분 클릭해도 꺼졌으면 좋겠어요!!</p>",
-    font: "나눔명조",
-    createdAt: "2024-03-15T08:28:56.156123Z",
-  },
-  {
-    id: 7743,
-    recipientId: 4814,
-    sender: "코드잇",
-    profileImageURL: "https://picsum.photos/id/571/100/100",
-    relationship: "가족",
-    content: "<p>안녕하세요</p>",
-    font: "나눔명조",
-    createdAt: "2024-03-08T05:29:37.613149Z",
-  },
-  {
-    id: 7743,
-    recipientId: 4814,
-    sender: "코드잇",
-    profileImageURL: "https://picsum.photos/id/571/100/100",
-    relationship: "가족",
-    content: "<p>안녕하세요</p>",
-    font: "나눔명조",
-    createdAt: "2024-03-08T05:29:37.613149Z",
-  },
-];
-
-const topReactionsTest = [
-  {
-    id: 5256,
-    emoji: "😃",
-    count: 2,
-  },
-  {
-    id: 5255,
-    emoji: "😀",
-    count: 2,
-  },
-  {
-    id: 5254,
-    emoji: "🫡",
-    count: 1,
-  },
-];
-
-const reactionsTest = [
-  {
-    id: 5524,
-    emoji: "🥰",
-    count: 3,
-  },
-  {
-    id: 5523,
-    emoji: "😆",
-    count: 2,
-  },
-  {
-    id: 5521,
-    emoji: "😃",
-    count: 1,
-  },
-  {
-    id: 5522,
-    emoji: "😁",
-    count: 1,
-  },
-  {
-    id: 5525,
-    emoji: "😍",
-    count: 1,
-  },
-  {
-    id: 5526,
-    emoji: "😋",
-    count: 1,
-  },
-  {
-    id: 5520,
-    emoji: "😀",
-    count: 1,
-  },
-  {
-    id: 5527,
-    emoji: "🥲",
-    count: 1,
-  },
-];
-
-const nameByIdTest = "hihi";
-const messageCountTest = reactionsTest.length;
+import { HeaderService, EmptyPostCard } from "sharing";
+import { getReactions, getRecipientById } from "util";
 
 export const PostPage = () => {
+  const [recipient, setRecipient] = useState(null);
+  const [reactions, setReactions] = useState(null);
+
   const { id } = useParams();
 
-  const [backgroundColor, setBackgroundColor] = useState([]);
-  const [backgroundImageURL, setBackgroundImageURL] = useState([]);
-  const [recentMessages, setRecentMessages] = useState([]);
+  const setdata = async () => {
+    const recipientData = await getRecipientById(id);
+    const reactions = await getReactions(id, 8);
+    setRecipient(recipientData);
+    setReactions(reactions);
+  };
 
   useEffect(() => {
-    const fetchRecipientId = async () => {
-      const data = await getRecipientById(id);
-      setBackgroundColor(data.backgroundColor);
-      setBackgroundImageURL(data.backgroundImageURL);
-    };
-    fetchRecipientId();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const fetchMessages = async () => {
-      const data = await getMessages(id);
-      setRecentMessages(data);
-    };
-    fetchMessages();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    setdata();
+  }, [id]);
 
   return (
-    <Layout isHiddenButton={true} edit={true}>
-      <HeaderService
-        name={nameByIdTest}
-        recentMessages={recentMessagesTest}
-        messageCount={messageCountTest}
-        topReactions={topReactionsTest}
-        reactions={reactionsTest}
-      />
-      <EmptyPostCard
-        id={id}
-        recentMessages={recentMessages}
-        color={backgroundColor}
-        image={backgroundImageURL}
-      />
-    </Layout>
+    recipient && (
+      <Layout isHiddenButton={true}>
+        <HeaderService
+          name={recipient.name}
+          recentMessages={recipient.recentMessages}
+          messageCount={recipient.messageCount}
+          reactions={reactions}
+          id={id}
+        />
+        <EmptyPostCard />
+      </Layout>
+    )
   );
 };
