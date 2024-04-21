@@ -14,20 +14,21 @@ export function EmojiExpantion({ reactions }) {
   };
 
   return (
-    <div className={cx("container")}>
-      <div className={cx("arrow-button")} onClick={toggleDropdown}>
-
-        <img src={ARROW_DOWN} alt="화살표 이미지" />
-      </div>
-      {isOpen && (
-        <div className={cx("grid-container")}>
-          <div className={cx("grid-style")}>
-            {reactions.map((item, i) => (
-              <BadgeEmoji key={i} emoji={item.emoji} count={item.count} />
-            ))}
-          </div>
+    reactions !== 0 && (
+      <div className={cx("container")}>
+        <div className={cx("arrow-button")} onClick={toggleDropdown}>
+          <img src={ARROW_DOWN} alt="화살표 이미지" />
         </div>
-      )}
-    </div>
+        {isOpen && (
+          <div className={cx("grid-container")}>
+            <div className={cx("grid-style")}>
+              {reactions.map((item, i) => (
+                <BadgeEmoji key={i} emoji={item.emoji} count={item.count} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    )
   );
 }
