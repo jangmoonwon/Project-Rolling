@@ -17,6 +17,7 @@ export const ListPage = () => {
   useEffect(() => {
     const fetchRecipient = async () => {
       const recipients = await getRecipients(undefined, undefined, "like");
+      console.log(recipients);
       setRecipientsSortedByReaction(recipients);
     };
     fetchRecipient();
@@ -25,6 +26,7 @@ export const ListPage = () => {
   useEffect(() => {
     const fetchRecipient = async () => {
       const recipients = await getRecipients();
+      console.log(recipients);
       setRecipients(recipients);
     };
     fetchRecipient();
