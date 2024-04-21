@@ -16,6 +16,7 @@ export function EmojiExpantion({ reactions }) {
   return (
     <div className={cx("container")}>
       <div className={cx("arrow-button")} onClick={toggleDropdown}>
+
         <img src={ARROW_DOWN} alt="화살표 이미지" />
       </div>
       {isOpen && (
