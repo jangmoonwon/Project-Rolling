@@ -13,16 +13,12 @@ import {
 
 const cx = classNames.bind(styles);
 
-const JustShadow = function ({visible}) {
-	if(!visible){
-		return(
-			<></>
-		)
-	}
-	return(
-		<div className={cx("shadow")} />
-	)
-}
+const JustShadow = function ({ visible }) {
+  if (!visible) {
+    return <></>;
+  }
+  return <div className={cx("shadow")} />;
+};
 
 export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
@@ -57,7 +53,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
         {recentMessages.map((item, i) => {
           return (
             <>
-			  <JustShadow visible={item.id === modalId}/>
+              <JustShadow visible={item.id === modalId} />
               <Modal
                 CardProfile={
                   <CardProfile
@@ -70,8 +66,8 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
                   <CardContent content={item.content} font={item.font} />
                 }
                 visible={item.id === modalId}
-				date={<CardDate date={item.createdAt} />}
-				setModalId={setModalId}
+                date={<CardDate date={item.createdAt} />}
+                setModalId={setModalId}
               />
               <button
                 key={i}
