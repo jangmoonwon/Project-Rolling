@@ -2,6 +2,7 @@ import { useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import styles from "./ReactionPopoverButton.module.scss";
 import classNames from "classnames/bind";
+import { ADDEMOJI_ICON } from "./constant";
 import { addReaction, getReactions } from "util";
 
 const cx = classNames.bind(styles);
