@@ -1,26 +1,42 @@
 import styles from "./Modal.module.scss";
 import classNames from "classnames/bind";
-import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
 /**
- * @param {profileInfo} 작성된 프로필 컴포넌트(카드에 들어가는 거랑 동일)
+ *
+ * @param {CardProfile} 작성된 프로필 컴포넌트(카드에 들어가는 거랑 동일)
  * @param {textContent} 해당 메시지의 텍스트
  * @returns 프로필과 텍스트가 들어간 모달
  */
-export const Modal = ({ profileInfo, textContent }) => {
+
+export const Modal = ({
+  CardProfile,
+  textContent,
+  date,
+  visible,
+  setModalId,
+}) => {
+  const goBack = function () {
+    setModalId(-1);
+  };
+  if (!visible) {
+    return <></>;
+  }
+
   return (
     <div className={cx("container")}>
       <div className={cx("head")}>
-        <div className={cx("date")}>2023.07.20</div>
-        <div className={cx("profile-area")}>{profileInfo}</div>
+        <div className={cx("date")}>{date}</div>
+        <div className={cx("profile-area")}>{CardProfile}</div>
         <div className={cx("divider")} />
       </div>
+
       <div className={cx("content")}>{textContent}</div>
-      <Link to="/list">
-        <button className={cx("button")}>확인</button>
-      </Link>
+
+      <button className={cx("button")} onClick={goBack}>
+        확인
+      </button>
     </div>
   );
 };

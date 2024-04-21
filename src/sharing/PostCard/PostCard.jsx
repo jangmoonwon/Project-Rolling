@@ -1,5 +1,6 @@
 import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   PostCardLayout,
@@ -7,6 +8,7 @@ import {
   CardContent,
   CardDate,
   DeleteButton,
+  Modal,
 } from "sharing";
 
 const cx = classNames.bind(styles);
@@ -14,8 +16,14 @@ const cx = classNames.bind(styles);
 export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
 
+  const [modalId, setModalId] = useState(-1);
+
   const handlemessage = () => {
     navigate(`/post/${id}/message`);
+  };
+
+  const handleModal = (messageId) => {
+    setModalId(messageId);
   };
 
   return (
@@ -37,26 +45,47 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
         {recentMessages.map((item, i) => {
           return (
-            <button key={i} className={cx("cardList")}>
-              {edit && (
-                <DeleteButton
-                  index={i}
-                  id={id}
-                  messages={recentMessages}
-                  image={edit}
-                />
-              )}
-
-              <CardProfile
-                image={item.profileImageURL}
-                name={item.sender}
-                relationship={item.relationship}
+            <>
+              <Modal
+                CardProfile={
+                  <CardProfile
+                    image={item.profileImageURL}
+                    name={item.sender}
+                    relationship={item.relationship}
+                  />
+                }
+                textContent={
+                  <CardContent content={item.content} font={item.font} />
+                }
+                visible={item.id === modalId}
+				date={<CardDate date={item.createdAt} />}
+				setModalId={setModalId}
               />
+              <button
+                key={i}
+                className={cx("cardList")}
+                onClick={() => handleModal(item.id)}
+              >
+                {edit && (
+                  <DeleteButton
+                    index={i}
+                    id={id}
+                    messages={recentMessages}
+                    image={edit}
+                  />
+                )}
 
-              <CardContent content={item.content} font={item.font} />
+                <CardProfile
+                  image={item.profileImageURL}
+                  name={item.sender}
+                  relationship={item.relationship}
+                />
 
-              <CardDate date={item.createdAt} />
-            </button>
+                <CardContent content={item.content} font={item.font} />
+
+                <CardDate date={item.createdAt} />
+              </button>
+            </>
           );
         })}
       </div>
