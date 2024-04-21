@@ -2,6 +2,7 @@ import { useState } from "react";
 import EmojiPicker from "emoji-picker-react";
 import styles from "./ReactionPopoverButton.module.scss";
 import classNames from "classnames/bind";
+import { ADDEMOJI_ICON } from "./constant";
 
 const cx = classNames.bind(styles);
 
@@ -21,7 +22,7 @@ export function ReactionPopoverButton() {
   return (
     <div className={cx("container")}>
       <div className={cx("popover-button")} onClick={toggleDropdown}>
-        <img src="/images/addEmojiIcon.svg" alt="화살표 이미지" />
+        <img src={ADDEMOJI_ICON} alt="화살표 이미지" />
         <p>추가</p>
       </div>
       {isOpen && (

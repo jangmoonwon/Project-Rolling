@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 export const Cards = ({ allColors, allImages, color, image }) => {
   const { userColor, selectedColorId, setSelectedColorId } = allColors;
   // eslint-disable-next-line no-unused-vars
-  const { userImage, selectedImageId, setSelectedImageId } = allImages;
+  const { selectedImageId, setSelectedImageId } = allImages;
 
   const handleColorClick = (i) => {
     setSelectedColorId(i);
@@ -18,7 +18,6 @@ export const Cards = ({ allColors, allImages, color, image }) => {
     setSelectedImageId(i);
   };
 
-  // 중복 해결 필요
   const CardList = () => {
     if (userColor === "clickButton") {
       return (
