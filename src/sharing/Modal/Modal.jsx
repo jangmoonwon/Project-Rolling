@@ -26,6 +26,7 @@ export const Modal = ({
 
   return (
     <div className={cx("container")}>
+		
       <div className={cx("head")}>
         <div className={cx("date")}>{date}</div>
         <div className={cx("profile-area")}>{CardProfile}</div>
