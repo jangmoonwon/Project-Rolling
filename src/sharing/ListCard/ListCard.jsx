@@ -24,9 +24,9 @@ export const ListCard = ({
   };
 
   const getBackgroundImages = () => {
-    const URL = backgroundColor
-      ? colorImage[backgroundColor]
-      : backgroundImageURL;
+    const URL = backgroundImageURL
+      ? backgroundImageURL
+      : colorImage[backgroundColor];
     setBackgroundURL(URL);
   };
 
@@ -36,7 +36,7 @@ export const ListCard = ({
 
   return (
     <div
-      className={cx("card-container", backgroundColor ? "color" : "image")}
+      className={cx("card-container", backgroundImageURL ? "image" : "color")}
       onClick={() => navigateToPostPage(id)}
     >
       <div className={cx("background")}>

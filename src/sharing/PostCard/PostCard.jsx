@@ -13,16 +13,12 @@ import {
 
 const cx = classNames.bind(styles);
 
-const JustShadow = function ({visible}) {
-	if(!visible){
-		return(
-			<></>
-		)
-	}
-	return(
-		<div className={cx("shadow")} />
-	)
-}
+const JustShadow = function ({ visible }) {
+  if (!visible) {
+    return <></>;
+  }
+  return <div className={cx("shadow")} />;
+};
 
 export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
@@ -42,64 +38,66 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
       style={image && { backgroundImage: `url(${image})` }}
       className={cx("background", color && color)}
     >
-      {edit && <DeleteButton id={id} />}
-      <div className={cx("content")}>
-        {!edit && (
-          <PostCardLayout>
-            <div className={cx("button-box")}>
-              <button onClick={handlemessage}>
-                <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
-              </button>
-            </div>
-          </PostCardLayout>
-        )}
+      <div className={cx("content-container")}>
+        {edit && <DeleteButton id={id} />}
+        <div className={cx("content")}>
+          {!edit && (
+            <PostCardLayout>
+              <div className={cx("button-box")}>
+                <button onClick={handlemessage}>
+                  <img src={"/images/plusButton.png"} alt="플러스 모양 버튼" />
+                </button>
+              </div>
+            </PostCardLayout>
+          )}
 
-        {recentMessages.map((item, i) => {
-          return (
-            <>
-			  <JustShadow visible={item.id === modalId}/>
-              <Modal
-                CardProfile={
+          {recentMessages.map((item, i) => {
+            return (
+              <>
+                <JustShadow visible={item.id === modalId} />
+                <Modal
+                  CardProfile={
+                    <CardProfile
+                      image={item.profileImageURL}
+                      name={item.sender}
+                      relationship={item.relationship}
+                    />
+                  }
+                  textContent={
+                    <CardContent content={item.content} font={item.font} />
+                  }
+                  visible={item.id === modalId}
+                  date={<CardDate date={item.createdAt} />}
+                  setModalId={setModalId}
+                />
+                <button
+                  key={i}
+                  className={cx("cardList")}
+                  onClick={() => handleModal(item.id)}
+                >
+                  {edit && (
+                    <DeleteButton
+                      index={i}
+                      id={id}
+                      messages={recentMessages}
+                      image={edit}
+                    />
+                  )}
+
                   <CardProfile
                     image={item.profileImageURL}
                     name={item.sender}
                     relationship={item.relationship}
                   />
-                }
-                textContent={
+
                   <CardContent content={item.content} font={item.font} />
-                }
-                visible={item.id === modalId}
-				date={<CardDate date={item.createdAt} />}
-				setModalId={setModalId}
-              />
-              <button
-                key={i}
-                className={cx("cardList")}
-                onClick={() => handleModal(item.id)}
-              >
-                {edit && (
-                  <DeleteButton
-                    index={i}
-                    id={id}
-                    messages={recentMessages}
-                    image={edit}
-                  />
-                )}
 
-                <CardProfile
-                  image={item.profileImageURL}
-                  name={item.sender}
-                  relationship={item.relationship}
-                />
-
-                <CardContent content={item.content} font={item.font} />
-
-                <CardDate date={item.createdAt} />
-              </button>
-            </>
-          );
-        })}
+                  <CardDate date={item.createdAt} />
+                </button>
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
