@@ -15,6 +15,14 @@
   width: 100%;
   max-width: 120rem;
   margin-top: 6rem;
+
+  @include tablet {
+    width: 72rem;
+  }
+
+  @include mobile {
+    width: 32rem;
+  }
 }
 
 .content {
@@ -23,6 +31,15 @@
   height: fit-content;
   border-radius: 1.6rem;
   background-color: $color-surface;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mobile {
+    overflow: hidden;
+  }
 }
 
 section:nth-of-type(odd) {
@@ -32,6 +49,9 @@ section:nth-of-type(odd) {
     "description image"
     ". image";
   padding: 6rem 0rem 6rem 6rem;
+  @include tablet {
+    padding: 4rem;
+  }
 }
 section:nth-of-type(even) {
   grid-template-areas:
@@ -40,6 +60,9 @@ section:nth-of-type(even) {
     "image description"
     "image .";
   padding: 6rem 19.2rem 6rem 0;
+  @include tablet {
+    padding: 4rem;
+  }
 }
 
 .label {
@@ -61,18 +84,35 @@ section:nth-of-type(even) {
   grid-area: title;
   margin-bottom: 0.8rem;
   line-height: 3.6rem;
+
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 .description {
   @include font-regular(1.8rem, $color-gray500);
   grid-area: description;
   line-height: 2.8rem;
+  @include mobile {
+    font-size: 15px;
+  }
 }
 
 .content-image {
   width: 100%;
   height: fit-content;
   grid-area: image;
+
+  @include tablet {
+    margin-top: 3.2rem;
+  }
+
+  @include mobile {
+    width: 200%;
+    height: 200%;
+    align-self: center;
+  }
 }
 
 .button-box {
@@ -81,6 +121,18 @@ section:nth-of-type(even) {
   padding: 2.4rem 0;
   width: 100%;
   max-width: 120rem;
+  margin-top: 2.4rem;
+
+  @include tablet {
+    padding: 2.4rem;
+    margin-top: 4.9rem;
+  }
+
+  a {
+    @include tablet {
+      width: 100%;
+    }
+  }
 }
 
 .button {
@@ -89,4 +141,7 @@ section:nth-of-type(even) {
   height: 5.6rem;
   border-radius: 1.2rem;
   background-color: $color-purple600;
+  @include tablet {
+    width: 100%;
+  }
 }
