@@ -32,7 +32,7 @@ export const DeleteButton = ({ id, index, messages, image }) => {
   }
 
   return (
-    <div>
+    <div className={cx("container")}>
       {image ? (
         <img
           onClick={handleDeleteMessagesClick}

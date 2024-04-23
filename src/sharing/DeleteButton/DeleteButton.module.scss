@@ -1,5 +1,20 @@
 @import "/src/styles/global.scss";
 
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 120rem;
+  justify-content: flex-end;
+
+  @include tablet {
+    max-width: 72rem;
+  }
+
+  @include mobile {
+    max-width: 32rem;
+  }
+}
+
 .icon {
   position: absolute;
   top: 2.4rem;
@@ -18,7 +33,10 @@
 
 .edit-button {
   position: absolute;
-  top: 4rem;
+  top: 6rem;
+  width: 100%;
+  max-width: 9.2rem;
+  max-height: 3.9rem;
   padding: 1rem 1.6rem;
   border-radius: 0.4rem;
   background: $color-purple600;
