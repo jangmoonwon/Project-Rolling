@@ -46,7 +46,7 @@ export const PostPage = () => {
 
   return (
     recipient && (
-      <Layout isHiddenButton={true} edit={true} isDisplay={true}>
+      <Layout isHiddenButton={true} isDisplay={true}>
         <HeaderService
           name={recipient.name}
           recentMessages={recipient.recentMessages}

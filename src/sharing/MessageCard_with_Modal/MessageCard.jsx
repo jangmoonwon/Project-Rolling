@@ -3,7 +3,7 @@ import classNames from "classnames/bind";
 import styles from "./MessageCard.module.scss";
 import { useState } from "react";
 import { Modal } from "./Modal";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
 

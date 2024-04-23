@@ -2,7 +2,7 @@ import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
 import { useNavigate } from "react-router-dom";
 import { PostCardLayout, DeleteButton } from "sharing";
-import { Modal } from "sharing/MessageCard_with_Modal";
+// import { Modal } from "sharing/MessageCard_with_Modal";
 import { MessageCard } from "sharing/MessageCard_with_Modal";
 // import { Modal } from "sharing/MessageCard_with_Modal/Modal/Modal";
 const cx = classNames.bind(styles);
