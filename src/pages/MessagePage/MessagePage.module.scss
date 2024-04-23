@@ -6,6 +6,9 @@
   gap: 4.5rem;
   width: 60rem;
   margin: 2.94rem auto 3.75rem;
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .marginTop {

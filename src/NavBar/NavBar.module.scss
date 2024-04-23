@@ -5,6 +5,19 @@
   justify-content: center;
   width: 100%;
   border-bottom: 0.1rem solid #ededed;
+  background-color: $color-white;
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  @include mobile {
+    &.hidden {
+      display: none;
+    }
+  }
 }
 
 .item {
@@ -14,6 +27,14 @@
   width: 100%;
   max-width: 120.7rem;
   height: 6.2rem;
+
+  @include tablet {
+    padding: 0 1.5rem;
+  }
+
+  @include mobile {
+    padding: 0 1.5rem;
+  }
 }
 
 .button {

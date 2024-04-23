@@ -11,6 +11,11 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
+
+  @include mobile {
+    max-width: 19rem;
+    max-height: 24rem;
+  }
 }
 
 .color {
@@ -21,6 +26,10 @@
     top: -1.2rem;
     left: -1.5rem;
     z-index: 1;
+
+    @include mobile {
+      width: 164%;
+    }
   }
 }
 
@@ -68,6 +77,16 @@
   .name {
     font-size: 2.4rem;
     font-weight: 700;
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  .message-count {
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
 
   span {
@@ -80,12 +99,20 @@
   flex-direction: column;
   gap: 1.6rem;
   margin-top: 5rem;
+
+  @include mobile {
+    margin-top: 1rem;
+  }
 }
 
 .rectangle {
   width: 22.7rem;
   height: 0.1rem;
   background: rgba(0, 0, 0, 0.12);
+
+  @include mobile {
+    max-width: 14rem;
+  }
 }
 
 .text-container {

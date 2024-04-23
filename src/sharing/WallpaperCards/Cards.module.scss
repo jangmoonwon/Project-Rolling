@@ -4,6 +4,12 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 28.8rem;
+  }
 }
 
 .cardBlock {

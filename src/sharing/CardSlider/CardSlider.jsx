@@ -24,6 +24,22 @@ export function CardSlider({ recipients }) {
     },
     nextArrow: currentSlide === length - 4 ? null : <NextArrow />,
     prevArrow: currentSlide === 0 ? null : <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1249,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
