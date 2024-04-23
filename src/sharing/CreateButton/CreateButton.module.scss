@@ -26,7 +26,7 @@
   }
 }
 
-.notButton {
+.unclicked-button {
   @extend .button;
   cursor: default;
   border-radius: 0.75rem;

@@ -32,7 +32,7 @@ export const DeleteButton = ({ id, index, messages, image }) => {
   }
 
   return (
-    <div>
+    <div className={cx("container")}>
       {image ? (
         <img
           onClick={handleDeleteMessagesClick}
@@ -41,11 +41,11 @@ export const DeleteButton = ({ id, index, messages, image }) => {
           alt="삭제하기"
         />
       ) : (
-        <div className={cx("editBlock")}>
+        <div className={cx("edit-block")}>
           <button
             onClick={handleDeletePageClick}
             type="button"
-            className={cx("editButton")}
+            className={cx("edit-button")}
           >
             삭제하기
           </button>

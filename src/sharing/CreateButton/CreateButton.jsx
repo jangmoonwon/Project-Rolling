@@ -10,7 +10,11 @@ export const CreateButton = ({ userName, content }) => {
     if (content === undefined) {
       if (userName.length === 0) {
         return (
-          <button className={cx("notButton")} type="submit" disabled="disabled">
+          <button
+            className={cx("unclicked-button")}
+            type="submit"
+            disabled="disabled"
+          >
             생성하기
           </button>
         );
@@ -24,7 +28,11 @@ export const CreateButton = ({ userName, content }) => {
     } else {
       if (userName.length === 0 || content.length === 0) {
         return (
-          <button className={cx("notButton")} type="submit" disabled="disabled">
+          <button
+            className={cx("unclicked-button")}
+            type="submit"
+            disabled="disabled"
+          >
             생성하기
           </button>
         );
