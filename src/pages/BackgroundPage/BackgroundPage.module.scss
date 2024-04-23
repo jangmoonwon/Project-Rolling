@@ -6,4 +6,15 @@
   gap: 4.5rem;
   width: 60rem;
   margin: 2.94rem auto 3.75rem;
+
+  @include mobile {
+    max-width: 60rem;
+    width: 100%;
+  }
+}
+
+main {
+  @include mobile {
+    padding: 0 2.4rem;
+  }
 }
