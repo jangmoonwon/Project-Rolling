@@ -2,14 +2,7 @@ import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  PostCardLayout,
-  CardProfile,
-  CardContent,
-  CardDate,
-  DeleteButton,
-  Modal,
-} from "sharing";
+import { PostCardLayout, DeleteButton, MessageCard } from "sharing";
 
 const cx = classNames.bind(styles);
 
@@ -53,53 +46,13 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
           {recentMessages.map((item, i) => {
             return (
-              <>
-
-                <JustShadow visible={item.id === modalId} />
-	
-                <Modal
-                  CardProfile={
-                    <CardProfile
-                      image={item.profileImageURL}
-                      name={item.sender}
-                      relationship={item.relationship}
-                    />
-                  }
-                  textContent={
-                    <CardContent content={item.content} font={item.font} />
-                  }
-                  visible={item.id === modalId}
-                  date={<CardDate date={item.createdAt} />}
-                  setModalId={setModalId}
-                />
-
-
-                <button
-                  key={i}
-                  className={cx("card")}
-                  onClick={() => handleModal(item.id)}
-                >
-                  {edit && (
-                    <DeleteButton
-                      index={i}
-                      id={id}
-                      messages={recentMessages}
-                      image={edit}
-                    />
-                  )}
-
-                  <CardProfile
-                    image={item.profileImageURL}
-                    name={item.sender}
-                    relationship={item.relationship}
-                  />
-
-                  <CardContent content={item.content} font={item.font} />
-
-                  <CardDate date={item.createdAt} />
-                </button>
-
-              </>
+              <MessageCard
+                key={i}
+                edit={edit}
+                id={id}
+                recentMessages={recentMessages}
+                item={item}
+              />
             );
           })}
         </div>
