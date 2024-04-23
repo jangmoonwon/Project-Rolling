@@ -15,6 +15,22 @@
   align-items: center;
   padding: 0.6rem 1.6rem;
   @include font-regular(1.6rem, $color-gray900);
+
+  p {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  img {
+    @include mobile {
+      width: 2rem;
+    }
+  }
+
+  @include mobile {
+    padding: 0.6rem 0.8rem;
+  }
 }
 
 .emoji-picker {
