@@ -1,10 +1,9 @@
-import styles from "./CardDate.module.scss";
 import classNames from "classnames/bind";
-
+import styles from "./DateContent.module.scss"
 const cx = classNames.bind(styles);
 
 /** 등록 날짜 */
-export const CardDate = ({ date }) => {
+export const DateContent = ({ date }) => {
   function displayDate() {
     const createdAtDate = new Date(date);
     const year = createdAtDate.getFullYear();
