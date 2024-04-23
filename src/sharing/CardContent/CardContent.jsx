@@ -7,6 +7,8 @@ const cx = classNames.bind(styles);
 
 /** 작성글 */
 export const CardContent = ({ content, font }) => {
+  console.log(content);
+
   const data = [
     {
       font: "Noto Sans",
@@ -34,7 +36,7 @@ export const CardContent = ({ content, font }) => {
   return (
     <div className={cx("bottom")}>
       <div
-        className={cx("text")}
+        className={cx("text", "hidden")}
         style={{
           fontFamily: style(),
           fontSize: "1.5rem",
