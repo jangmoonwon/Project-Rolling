@@ -1,14 +1,28 @@
 @import "/src/styles/global.scss";
 
+.background {
+  position: relative;
+  background-size: cover;
+  height: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  padding-bottom: 20rem;
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 100vh;
   max-width: 120rem;
+  height: 100vh;
+  margin: 0 2.4rem;
 }
 
-.content {
+.card-list {
   display: grid;
   grid-template-columns: repeat(3, 38.4rem);
   width: 100%;
@@ -18,12 +32,14 @@
   padding: 11.3rem 0 54rem;
 
   @include tablet {
+	width: minmax(auto, 76.8rem);
     gap: 1.6rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(auto, 38.4rem));
   }
 
   @include mobile {
-    grid-template-columns: repeat(1, 1fr);
+	width: minmax(auto, 38.4rem);
+    grid-template-columns: repeat(1, minmax(auto, 38.4rem));
   }
 }
 
@@ -47,18 +63,6 @@
   text-align: justify;
   display: flex;
   flex-direction: column;
-}
-
-.background {
-  position: relative;
-  background-size: cover;
-  height: max-content;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 2.4rem;
-  overflow-y: scroll;
-  padding-bottom: 20rem;
 }
 
 .beige {

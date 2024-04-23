@@ -40,7 +40,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
     >
       <div className={cx("content-container")}>
         {edit && <DeleteButton id={id} />}
-        <div className={cx("content")}>
+        <div className={cx("card-list")}>
           {!edit && (
             <PostCardLayout>
               <div className={cx("button-box")}>
@@ -54,7 +54,9 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
           {recentMessages.map((item, i) => {
             return (
               <>
+
                 <JustShadow visible={item.id === modalId} />
+	
                 <Modal
                   CardProfile={
                     <CardProfile
@@ -70,6 +72,8 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
                   date={<CardDate date={item.createdAt} />}
                   setModalId={setModalId}
                 />
+
+
                 <button
                   key={i}
                   className={cx("cardList")}
@@ -94,6 +98,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
                   <CardDate date={item.createdAt} />
                 </button>
+
               </>
             );
           })}
