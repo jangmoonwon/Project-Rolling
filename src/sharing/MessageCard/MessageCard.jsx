@@ -1,10 +1,18 @@
-import { Content, DeleteButton, JustShadow, Profile, Modal, DateContent } from "./ui";
+import {
+  Content,
+  DeleteButton,
+  JustShadow,
+  Profile,
+  Modal,
+  DateContent,
+} from "./ui";
 import classNames from "classnames/bind";
 import styles from "./MessageCard.module.scss";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 const cx = classNames.bind(styles);
 
-const Card = function ({ key, edit, id, recentMessages, item, handleModal }) {
+const Card = function ({ key, edit, id, item, handleModal }) {
   return (
     <button
       key={key}
@@ -12,12 +20,7 @@ const Card = function ({ key, edit, id, recentMessages, item, handleModal }) {
       onClick={() => handleModal(item.id)}
     >
       {edit && (
-        <DeleteButton
-          index={key}
-          id={id}
-          messages={recentMessages}
-          image={edit}
-        />
+        <DeleteButton index={key} id={id} message={item} image={edit} />
       )}
 
       <Profile
@@ -33,9 +36,8 @@ const Card = function ({ key, edit, id, recentMessages, item, handleModal }) {
   );
 };
 
-
-
-export const MessageCard = function ({ key, edit, id, recentMessages, item }) {
+export const MessageCard = function ({ idx, edit, id, item }) {
+  const key = idx;
   const [modalId, setModalId] = useState(-1);
   const handleModal = (messageId) => {
     setModalId(messageId);
@@ -61,7 +63,6 @@ export const MessageCard = function ({ key, edit, id, recentMessages, item }) {
         key={key}
         edit={edit}
         id={id}
-        recentMessages={recentMessages}
         item={item}
         handleModal={handleModal}
       />

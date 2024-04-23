@@ -1,29 +1,16 @@
 import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PostCardLayout, DeleteButton, MessageCard } from "sharing";
 
 const cx = classNames.bind(styles);
 
-const JustShadow = function ({ visible }) {
-  if (!visible) {
-    return <></>;
-  }
-  return <div className={cx("shadow")} />;
-};
-
 export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
+  
   const navigate = useNavigate();
-
-  const [modalId, setModalId] = useState(-1);
 
   const handlemessage = () => {
     navigate(`/post/${id}/message`);
-  };
-
-  const handleModal = (messageId) => {
-    setModalId(messageId);
   };
 
   return (
@@ -44,13 +31,13 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
             </PostCardLayout>
           )}
 
-          {recentMessages.map((item, i) => {
+          {id !== undefined && recentMessages.map((item, i) => {
             return (
               <MessageCard
-                key={i}
+                idx={i}
                 edit={edit}
                 id={id}
-                recentMessages={recentMessages}
+                // recentMessages={recentMessages}
                 item={item}
               />
             );

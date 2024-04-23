@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-export const DeleteButton = ({ id, index, messages, image }) => {
+export const DeleteButton = ({ id, index, message, image }) => {
   const navigate = useNavigate();
 
   async function handleDeletePageClick() {
+    console.log(id);
     try {
       await deleteRecipient(id);
       alert("롤링 페이퍼가 삭제되었습니다.");
@@ -19,8 +20,8 @@ export const DeleteButton = ({ id, index, messages, image }) => {
   }
 
   async function handleDeleteMessagesClick() {
-    const messagesId = messages[index].id;
-    const sender = messages[index].sender;
+    const messagesId = message.id;
+    const sender = message.sender;
 
     try {
       await deleteMessage(messagesId);
