@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./CardContent.module.scss";
+import styles from "./Content.module.scss";
 import classNames from "classnames/bind";
 import parse from "html-react-parser";
 
 const cx = classNames.bind(styles);
 
 /** 작성글 */
-export const CardContent = ({ content, font }) => {
+export const Content = ({ content, font }) => {
   const data = [
     {
       font: "Noto Sans",

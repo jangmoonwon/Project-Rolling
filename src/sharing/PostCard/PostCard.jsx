@@ -1,36 +1,18 @@
 import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  PostCardLayout,
-  CardProfile,
-  CardContent,
-  CardDate,
-  DeleteButton,
-  Modal,
-} from "sharing";
-
+import { PostCardLayout, DeleteButton } from "sharing";
+// import { Modal } from "sharing/MessageCard_with_Modal";
+import { MessageCard } from "sharing/MessageCard_with_Modal";
+// import { Modal } from "sharing/MessageCard_with_Modal/Modal/Modal";
 const cx = classNames.bind(styles);
-
-const JustShadow = function ({ visible }) {
-  if (!visible) {
-    return <></>;
-  }
-  return <div className={cx("shadow")} />;
-};
 
 export const PostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
 
-  const [modalId, setModalId] = useState(-1);
-
+  //   const [modalId, setModalId] = useState(-1);
   const handlemessage = () => {
     navigate(`/post/${id}/message`);
-  };
-
-  const handleModal = (messageId) => {
-    setModalId(messageId);
   };
 
   return (
@@ -40,7 +22,7 @@ export const PostCard = ({ id, recentMessages, edit, color, image }) => {
     >
       <div className={cx("content-container")}>
         {edit && <DeleteButton id={id} />}
-        <div className={cx("content")}>
+        <div className={cx("card-list")}>
           {!edit && (
             <PostCardLayout>
               <div className={cx("button-box")}>
@@ -50,53 +32,10 @@ export const PostCard = ({ id, recentMessages, edit, color, image }) => {
               </div>
             </PostCardLayout>
           )}
-
-          {recentMessages.map((item, i) => {
-            return (
-              <div key={item.id}>
-                <JustShadow visible={item.id === modalId} />
-                <Modal
-                  CardProfile={
-                    <CardProfile
-                      image={item.profileImageURL}
-                      name={item.sender}
-                      relationship={item.relationship}
-                    />
-                  }
-                  textContent={
-                    <CardContent content={item.content} font={item.font} />
-                  }
-                  visible={item.id === modalId}
-                  date={<CardDate date={item.createdAt} />}
-                  setModalId={setModalId}
-                />
-                <button
-                  key={i}
-                  className={cx("card-list")}
-                  onClick={() => handleModal(item.id)}
-                >
-                  {edit && (
-                    <DeleteButton
-                      index={i}
-                      id={id}
-                      messages={recentMessages}
-                      image={edit}
-                    />
-                  )}
-
-                  <CardProfile
-                    image={item.profileImageURL}
-                    name={item.sender}
-                    relationship={item.relationship}
-                  />
-
-                  <CardContent content={item.content} font={item.font} />
-
-                  <CardDate date={item.createdAt} />
-                </button>
-              </div>
-            );
-          })}
+          {id !== undefined &&
+            recentMessages.map((item, i) => {
+              return <MessageCard idx={i} edit={edit} id={id} item={item} />;
+            })}
         </div>
       </div>
     </div>

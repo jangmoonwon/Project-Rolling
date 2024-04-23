@@ -83,8 +83,16 @@ section:nth-of-type(even) {
   margin-bottom: 0.8rem;
   line-height: 3.6rem;
 
+  @include tablet {
+    br{
+      display: inline-block;
+      content: " ";
+      padding: 0 0.1rem;
+   }
+  }
+
   @include mobile {
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 }
 

@@ -1,10 +1,10 @@
-import styles from "./CardProfile.module.scss";
+import styles from "./Profile.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
 
 /** 사용자 프로필: 이미지, 이름, 관계 */
-export const CardProfile = ({ image, name, relationship }) => {
+export const Profile = ({ image, name, relationship }) => {
   const data = [
     {
       relationship: "지인",

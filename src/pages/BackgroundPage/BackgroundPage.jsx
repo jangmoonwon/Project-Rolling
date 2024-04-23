@@ -56,7 +56,7 @@ export const BackgroundPage = () => {
   };
 
   return (
-    <Layout isHiddenButton={true}>
+    <Layout isHiddenButton={true} isDisplay={true}>
       <form className={cx("container")} onSubmit={handleSubmit}>
         <NameInput
           value={recipientName}

@@ -77,6 +77,9 @@
   .name {
     font-size: 2.4rem;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @include mobile {
       font-size: 2rem;
