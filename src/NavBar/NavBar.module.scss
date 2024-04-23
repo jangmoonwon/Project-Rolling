@@ -5,6 +5,13 @@
   justify-content: center;
   width: 100%;
   border-bottom: 0.1rem solid #ededed;
+  background-color: $color-white;
+
+  &.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 }
 
 .item {
