@@ -10,11 +10,6 @@
   @include mobile {
     max-width: 60rem;
     width: 100%;
-  }
-}
-
-main {
-  @include mobile {
     padding: 0 2.4rem;
   }
 }
