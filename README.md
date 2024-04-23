@@ -6,7 +6,7 @@
 롤링을 통해 상대방에게 마음을 전달해보세요 :)
 
 ## URL
-URL 주소
+[롤링 URL](https://rolling-5-8.netlify.app/)
 
 ## 화면 구성
 ### 메인 페이지
