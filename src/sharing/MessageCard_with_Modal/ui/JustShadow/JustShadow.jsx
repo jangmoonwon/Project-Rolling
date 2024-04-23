@@ -3,9 +3,6 @@ import styles from "./JustShadow.module.scss";
 
 const cx = classNames.bind(styles);
 
-export const JustShadow = function ({ visible }) {
-  if (!visible) {
-    return <></>;
-  }
+export const JustShadow = function () {
   return <div className={cx("shadow")} />;
 };

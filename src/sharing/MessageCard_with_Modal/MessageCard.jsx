@@ -1,9 +1,8 @@
-import { Content, DeleteButton, JustShadow, Profile, DateContent } from "./ui";
+import { Content, DeleteButton, Profile, DateContent } from "./ui";
 import classNames from "classnames/bind";
 import styles from "./MessageCard.module.scss";
 import { useState } from "react";
 import { Modal } from "./Modal";
-import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
@@ -22,8 +21,9 @@ const Card = function ({ key, edit, id, item, handleModal }) {
         name={item.sender}
         relationship={item.relationship}
       />
-
-      <Content content={item.content} font={item.font} />
+      <div className={cx("content-frame")}>
+        <Content content={item.content} font={item.font} />
+      </div>
 
       <DateContent date={item.createdAt} />
     </button>
@@ -39,15 +39,8 @@ export const MessageCard = function ({ idx, edit, id, item }) {
     }
   };
 
-  useEffect(() => {
-    console.log(modalId);
-    console.log(item);
-    console.log("---");
-  }, [modalId, idx]);
   return (
     <>
-      <JustShadow visible={item.id === modalId} />
-
       <Modal
         CardProfile={
           <Profile
