@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-export const NavBar = ({ isHiddenButton, edit, isSticky }) => {
+export const NavBar = ({ isHiddenButton, edit, isSticky, isDisplay }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ export const NavBar = ({ isHiddenButton, edit, isSticky }) => {
   };
 
   return (
-    <nav className={cx("container", { sticky: isSticky })}>
+    <nav className={cx("container", { sticky: isSticky, hidden: isDisplay })}>
       <div className={cx("item")}>
         <Link to="/">
           <img src={LOGO_IMAGE} alt="nav logo" />
