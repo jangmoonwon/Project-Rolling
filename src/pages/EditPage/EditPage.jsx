@@ -54,7 +54,7 @@ export const EditPage = () => {
 
   return (
     recipient && (
-      <Layout isHiddenButton={true}>
+      <Layout isHiddenButton={true} isDisplay={true}>
         <HeaderService
           name={recipient.name}
           recentMessages={recipient.recentMessages}
