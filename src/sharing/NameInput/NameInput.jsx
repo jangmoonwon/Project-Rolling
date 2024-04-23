@@ -32,7 +32,7 @@ export const NameInput = ({ value, setValue, title, text = "" }) => {
         onChange={(event) => setValue(event.target.value)}
         placeholder={`${text}이름을 입력해 주세요.`}
       />
-      <p className={cx("errorMessage")}>{errorMessage}</p>
+      <p className={cx("error-message")}>{errorMessage}</p>
     </div>
   );
 };

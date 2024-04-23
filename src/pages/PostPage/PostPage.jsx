@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Layout } from "layout/Layout";
-import { HeaderService, EmptyPostCard } from "sharing";
+import { HeaderService, PostCard } from "sharing";
 import { useParams } from "react-router-dom";
 import { getRecipientById, getMessages, getReactions } from "util";
 
@@ -54,7 +54,7 @@ export const PostPage = () => {
           reactions={reactions}
           id={id}
         />
-        <EmptyPostCard
+        <PostCard
           id={id}
           recentMessages={recentMessages}
           color={backgroundColor}

@@ -28,7 +28,7 @@ li {
   list-style: none;
 }
 
-.dropdownBlock {
+.dropdown-block {
   display: flex;
   justify-content: space-between;
   width: 26rem;
@@ -43,7 +43,7 @@ li {
   cursor: pointer;
 }
 
-.dropdownBlock:hover {
+.dropdown-block:hover {
   border: 1px solid $color-gray500;
 }
 

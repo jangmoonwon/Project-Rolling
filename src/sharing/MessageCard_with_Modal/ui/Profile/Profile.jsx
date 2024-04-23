@@ -35,7 +35,7 @@ export const Profile = ({ image, name, relationship }) => {
 
       <div>
         <p className={cx("name")}>
-          From. <span className={cx("userName")}>{name}</span>
+          From. <span className={cx("user-name")}>{name}</span>
         </p>
         <span className={cx("relationship", style())}>{relationship}</span>
       </div>

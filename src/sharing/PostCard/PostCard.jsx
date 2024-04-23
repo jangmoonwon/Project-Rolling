@@ -7,7 +7,7 @@ import { MessageCard } from "sharing/MessageCard_with_Modal";
 // import { Modal } from "sharing/MessageCard_with_Modal/Modal/Modal";
 const cx = classNames.bind(styles);
 
-export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
+export const PostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
 
   //   const [modalId, setModalId] = useState(-1);
@@ -32,12 +32,10 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
               </div>
             </PostCardLayout>
           )}
-
           {id !== undefined &&
             recentMessages.map((item, i) => {
               return <MessageCard idx={i} edit={edit} id={id} item={item} />;
             })}
-
         </div>
       </div>
     </div>
