@@ -1,6 +1,8 @@
 import styles from "./Modal.module.scss";
 import classNames from "classnames/bind";
 
+// ~~~/ Modal/Modal 이렇게 쓸 필요는 없음 -> 그냥 ~~~/
+//scss는 모듈화 가능해서 ㄱㅊ, 저거 JSX만 올려 보내면 충돌 안남
 const cx = classNames.bind(styles);
 
 /**
@@ -16,6 +18,7 @@ export const Modal = ({
   date,
   visible,
   setModalId,
+  edit,
 }) => {
   const goBack = function () {
     setModalId(-1);
@@ -26,7 +29,6 @@ export const Modal = ({
 
   return (
     <div className={cx("container")}>
-		
       <div className={cx("head")}>
         <div className={cx("date")}>{date}</div>
         <div className={cx("profile-area")}>{CardProfile}</div>
