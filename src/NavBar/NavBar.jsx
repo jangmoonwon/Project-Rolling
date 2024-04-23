@@ -1,19 +1,11 @@
 import styles from "./NavBar.module.scss";
 import classNames from "classnames/bind";
 import { LOGO_IMAGE } from "./constant";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-export const NavBar = ({ isHiddenButton, edit, isSticky, isDisplay }) => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const handleEdit = (event) => {
-    event.preventDefault();
-    navigate(`/post/${id}/edit`);
-  };
-
+export const NavBar = ({ isHiddenButton, isSticky, isDisplay }) => {
   return (
     <nav className={cx("container", { sticky: isSticky, hidden: isDisplay })}>
       <div className={cx("item")}>
@@ -25,13 +17,6 @@ export const NavBar = ({ isHiddenButton, edit, isSticky, isDisplay }) => {
             롤링 페이퍼 만들기
           </button>
         </Link>
-        {edit ? (
-          <button className={cx("button")} onClick={handleEdit}>
-            수정하기
-          </button>
-        ) : (
-          ""
-        )}
       </div>
     </nav>
   );

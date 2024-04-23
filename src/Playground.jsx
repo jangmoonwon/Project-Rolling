@@ -78,8 +78,8 @@ const PlayGround = () => {
 
   const testGetMessages = async () => {
     try {
-      const recipientId = 6110; // 메시지를 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
-      const data = await getMessages(recipientId);
+      const recipientId = 6400; // 메시지를 조회할 대상의 ID. 존재하는 대상의 ID로 변경해야 함
+      const data = await getMessages(recipientId, 1000);
       console.log(data);
     } catch (error) {
       console.error(error);

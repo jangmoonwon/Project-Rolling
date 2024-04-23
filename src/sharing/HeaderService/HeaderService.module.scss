@@ -12,10 +12,26 @@
   width: 120rem;
   justify-content: space-between;
   display: flex;
+  padding: 1.3rem 0;
+  @include tablet {
+    padding: 1.3rem 2.4rem;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
 .name {
   @include font-bold(2.8rem, $color-gray800);
+  @include mobile {
+    font-size: 1.8rem;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border-bottom: 0.1rem solid $color-gray200;
+  }
 }
 
 .count-visitor {
@@ -29,6 +45,20 @@
 
   .message-count {
     font-weight: 700;
+  }
+
+  .count-visit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    padding: 0.8rem 2rem;
+    justify-content: flex-end;
   }
 }
 

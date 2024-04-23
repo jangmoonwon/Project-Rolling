@@ -8,7 +8,6 @@ const cx = classNames.bind(styles);
 
 export function ShareButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const [url, setUrl] = useState();
   const [isCopyed, setIsCopyed] = useState(false);
 
   const toggleDropdown = () => {
@@ -16,9 +15,9 @@ export function ShareButton() {
   };
 
   const copyUrlToClipBoard = () => {
-    setUrl(window.location.href);
+    const currentUrl = window.location.href;
     setIsCopyed(true);
-    navigator.clipboard.writeText(url);
+    navigator.clipboard.writeText(currentUrl);
     setTimeout(() => {
       setIsCopyed(false);
     }, 5000);
