@@ -44,7 +44,7 @@ export const ListPage = () => {
           <CardSlider recipients={recipients} />
         </div>
         <Link className={cx("link-button")} to="/post">
-          <div className={cx("link-button-style")}>만들어보기</div>
+          <div className={cx("link-button-style")}>나도 만들어보기</div>
         </Link>
       </div>
     </Layout>
