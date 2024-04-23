@@ -6,12 +6,11 @@
   height: 100%;
   flex-direction: column;
   padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .text {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
   height: 100px;
-  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
 }
