@@ -7,6 +7,7 @@ import {
   EmojiExpantion,
   ReactionPopoverButton,
   ShareButton,
+  EditButton,
 } from "sharing";
 
 const cx = classNames.bind(styles);
@@ -43,6 +44,8 @@ export function HeaderService({
           />
           <div className={cx("partition13px")}></div>
           <ShareButton />
+          <div className={cx("partition13px")}></div>
+          <EditButton edit={true}/>
         </div>
       </div>
     </div>
