@@ -76,7 +76,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
                 <button
                   key={i}
-                  className={cx("cardList")}
+                  className={cx("card")}
                   onClick={() => handleModal(item.id)}
                 >
                   {edit && (
