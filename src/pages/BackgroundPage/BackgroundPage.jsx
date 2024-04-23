@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 export const BackgroundPage = () => {
   const [backgroundAllImage, setBackgroundAllImage] = useState([]);
   const [recipientName, setRecipientName] = useState("");
-  const [userColor, setUserColor] = useState("clickButton");
+  const [userColor, setUserColor] = useState("click-button");
   const [userImage, setUserImage] = useState("button");
   const [selectedColorId, setSelectedColorId] = useState(0);
   const [selectedImageId, setSelectedImageId] = useState(null);

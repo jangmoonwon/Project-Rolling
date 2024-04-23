@@ -80,7 +80,7 @@ export const MessagePage = () => {
 
         <TextEditor value={content} setValue={setContent} />
 
-        <div className={cx("marginTop")}>
+        <div className={cx("font-box")}>
           <DropdownMenuBar
             id={id}
             value={font}

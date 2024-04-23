@@ -20,7 +20,7 @@ const JustShadow = function ({ visible }) {
   return <div className={cx("shadow")} />;
 };
 
-export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
+export const PostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
 
   const [modalId, setModalId] = useState(-1);
@@ -53,7 +53,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
           {recentMessages.map((item, i) => {
             return (
-              <>
+              <div key={item.id}>
                 <JustShadow visible={item.id === modalId} />
                 <Modal
                   CardProfile={
@@ -72,7 +72,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
                 />
                 <button
                   key={i}
-                  className={cx("cardList")}
+                  className={cx("card-list")}
                   onClick={() => handleModal(item.id)}
                 >
                   {edit && (
@@ -94,7 +94,7 @@ export const EmptyPostCard = ({ id, recentMessages, edit, color, image }) => {
 
                   <CardDate date={item.createdAt} />
                 </button>
-              </>
+              </div>
             );
           })}
         </div>

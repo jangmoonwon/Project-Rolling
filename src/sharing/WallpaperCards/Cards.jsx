@@ -19,14 +19,14 @@ export const Cards = ({ allColors, allImages, color, image }) => {
   };
 
   const CardList = () => {
-    if (userColor === "clickButton") {
+    if (userColor === "click-button") {
       return (
         <>
           {color.map((item, i) => {
             return (
-              <div key={i} className={cx("cardBlock")}>
+              <div key={i} className={cx("card-block")}>
                 <button
-                  className={cx("colorButton", item)}
+                  className={cx("color-button", item)}
                   type="button"
                   onClick={() => handleColorClick(i)}
                 ></button>
@@ -49,9 +49,9 @@ export const Cards = ({ allColors, allImages, color, image }) => {
         <>
           {image.map((item, i) => {
             return (
-              <div key={i} className={cx("cardBlock")}>
+              <div key={i} className={cx("card-block")}>
                 <button
-                  className={cx("imageButton", item)}
+                  className={cx("image-button", item)}
                   type="button"
                   onClick={() => handleImageClick(i)}
                 >

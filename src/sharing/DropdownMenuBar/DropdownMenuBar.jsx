@@ -24,7 +24,7 @@ export const DropdownMenuBar = ({ value, setValue, data, text }) => {
 
       <button
         type="button"
-        className={cx("dropdownBlock")}
+        className={cx("dropdown-block")}
         onClick={toggleDropdown}
       >
         <ul>{value}</ul>
