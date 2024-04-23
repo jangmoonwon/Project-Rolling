@@ -28,14 +28,14 @@ export function CardSlider({ recipients }) {
       {
         breakpoint: 1249,
         settings: {
-          slidesToShow: 2.5,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },

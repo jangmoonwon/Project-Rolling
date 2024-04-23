@@ -3,4 +3,8 @@
 .container {
   display: flex;
   gap: 0.8rem;
+
+  @include mobile {
+    flex-wrap: wrap;
+  }
 }
