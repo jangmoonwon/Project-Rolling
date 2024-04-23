@@ -1,4 +1,4 @@
-@import "../styles/global.scss";
+@import "src/styles/global.scss";
 
 .container {
   display: flex;
@@ -29,11 +29,7 @@
   height: 6.2rem;
 
   @include tablet {
-    padding: 0 1.5rem;
-  }
-
-  @include mobile {
-    padding: 0 1.5rem;
+    padding: 0 2.4rem;
   }
 }
 

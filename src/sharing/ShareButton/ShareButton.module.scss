@@ -12,6 +12,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    @include mobile {
+      width: 2rem;
+    }
+  }
+
+  @include mobile {
+    padding: 0.6rem 0.8rem;
+  }
 }
 
 .share-button-container {

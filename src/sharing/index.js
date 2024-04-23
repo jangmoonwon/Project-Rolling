@@ -19,3 +19,4 @@ export * from "./CardSlider";
 export * from "./SlideArrow";
 export * from "./ListCard";
 export * from "./MessageCard_with_Modal";
+export * from "./EditButton";
