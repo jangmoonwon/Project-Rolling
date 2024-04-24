@@ -3,13 +3,21 @@
 .background {
   position: relative;
   background-size: cover;
-  height: max-content;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
-  padding-bottom: 20rem;
+//   padding-bottom: 20rem;
+}
+
+/* 스크롤바 전체 스타일 */
+.background::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  top: 1.6rem;
+  margin-left: 1.6rem;
 }
 
 .content-container {
@@ -18,7 +26,7 @@
   align-items: center;
   width: 100%;
   max-width: 120rem;
-  height: 100vh;
+  height: 100%;
   margin: 0 2.4rem;
 }
 

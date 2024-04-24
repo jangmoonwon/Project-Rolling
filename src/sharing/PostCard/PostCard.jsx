@@ -1,16 +1,11 @@
 import styles from "./PostCard.module.scss";
 import classNames from "classnames/bind";
 import { useNavigate } from "react-router-dom";
-import { PostCardLayout, DeleteButton } from "sharing";
-// import { Modal } from "sharing/MessageCard_with_Modal";
-import { MessageCard } from "sharing/MessageCard_with_Modal";
-// import { Modal } from "sharing/MessageCard_with_Modal/Modal/Modal";
+import { PostCardLayout, DeleteButton, MessageCard } from "sharing";
 const cx = classNames.bind(styles);
 
 export const PostCard = ({ id, recentMessages, edit, color, image }) => {
   const navigate = useNavigate();
-
-  //   const [modalId, setModalId] = useState(-1);
   const handlemessage = () => {
     navigate(`/post/${id}/message`);
   };

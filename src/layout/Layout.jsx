@@ -4,9 +4,14 @@ export const Layout = ({
   children,
   isHiddenButton = false,
   edit,
-  isSticky = true,
+  isSticky = false,
   isDisplay = false,
 }) => {
+  const style = {
+    display: "flex",
+	flexDirection: "column",
+	height: "100vh",
+  };
   return (
     <div>
       <NavBar
@@ -15,7 +20,7 @@ export const Layout = ({
         isSticky={isSticky}
         isDisplay={isDisplay}
       />
-      <main>{children}</main>
+      <main style={style}>{children}</main>
     </div>
   );
 };
