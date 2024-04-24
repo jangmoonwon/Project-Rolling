@@ -32,7 +32,7 @@ export const PostPage = () => {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const data = await getMessages(id);
+      const data = await getMessages(id,1000);
       setRecentMessages(data);
     };
     fetchMessages();
